@@ -15,8 +15,7 @@ const BlogIndex = ({
   if (!posts.length) {
     return (
       <Layout isHomePage>
-        <Seo title="All posts" />
-        <Bio />
+        <Seo title="Chapters" />
         <p>
           No blog posts found. Add posts to your WordPress site and they'll
           appear here!
@@ -27,9 +26,7 @@ const BlogIndex = ({
 
   return (
     <Layout isHomePage>
-      <Seo title="All posts" />
-
-      <Bio />
+      <Seo title="Chapters" />
 
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
@@ -48,9 +45,8 @@ const BlogIndex = ({
                       <span itemProp="headline">{parse(title)}</span>
                     </Link>
                   </h2>
-                  <small>{post.date}</small>
+                  <p>{post.date}</p>
                 </header>
-                <section itemProp="description">{parse(post.excerpt)}</section>
               </article>
             </li>
           )

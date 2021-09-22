@@ -69,7 +69,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
           <li>
             {previous && (
               <Link to={previous.uri} rel="prev">
-                ← {parse(previous.title)}
+                ← Previous chapter
               </Link>
             )}
           </li>
@@ -77,7 +77,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
           <li>
             {next && (
               <Link to={next.uri} rel="next">
-                {parse(next.title)} →
+                Next chapter →
               </Link>
             )}
           </li>

@@ -1,5 +1,7 @@
 /* CSS Custom Properties Definitions */
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 :root {
   --maxWidth-none: "none";
   --maxWidth-xs: 20rem;
@@ -12,6 +14,7 @@
   --maxWidth-4xl: 56rem;
   --maxWidth-full: "100%";
   --maxWidth-wrapper: var(--maxWidth-2xl);
+
   --spacing-px: "1px";
   --spacing-0: 0;
   --spacing-1: 0.25rem;
@@ -27,39 +30,39 @@
   --spacing-20: 5rem;
   --spacing-24: 6rem;
   --spacing-32: 8rem;
-  --fontFamily-sans: Montserrat, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --fontFamily-serif: "Merriweather", "Georgia", Cambria, "Times New Roman",
-    Times, serif;
+  
+  --fontFamily-sans: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --fontFamily-serif: "Noto Serif", serif;
   --font-body: var(--fontFamily-serif);
   --font-heading: var(--fontFamily-sans);
+  
   --fontWeight-normal: 400;
   --fontWeight-medium: 500;
   --fontWeight-semibold: 600;
   --fontWeight-bold: 700;
-  --fontWeight-extrabold: 800;
-  --fontWeight-black: 900;
-  --fontSize-root: 16px;
+
   --lineHeight-none: 1;
   --lineHeight-tight: 1.1;
   --lineHeight-normal: 1.5;
   --lineHeight-relaxed: 1.625;
-  /* 1.200 Minor Third Type Scale */
-  --fontSize-0: 0.833rem;
-  --fontSize-1: 1rem;
-  --fontSize-2: 1.2rem;
-  --fontSize-3: 1.44rem;
-  --fontSize-4: 1.728rem;
-  --fontSize-5: 2.074rem;
-  --fontSize-6: 2.488rem;
-  --fontSize-7: 2.986rem;
-  --color-primary: #005b99;
-  --color-text: #2e353f;
-  --color-text-light: #4f5969;
-  --color-heading: #1a202c;
-  --color-heading-black: black;
-  --color-accent: #d1dce5;
+  
+  --fontSize-root: 16px;
+  --fontSize-small: 0.833rem;
+  --fontSize-normal: 1rem;
+  --fontSize-accent: 1.25rem;
+  --fontSize-heading: 2rem;
+
+  --color-primary: hsla(188, 40%, 47%, 1);
+  --color-primary-dark: hsla(188, 40%, 32%, 1);
+  --color-secondary: hsla(6, 91%, 76%, 1);
+  --color-secondary-light: hsla(6, 91%, 86%, 1);
+  --color-outline: hsla(188, 40%, 72%, 1);
+  --color-background: hsla(188, 40%, 92%, 1);
+  --color-background-dark: hsla(188, 40%, 88%, 1);
+  --color-background-light: hsla(188, 40%, 96%, 1);
+  --color-black: hsla(188, 40%, 10%, 1);
+  --color-pale: hsla(188, 10%, 64%, 1);
 }
 
 /* HTML elements */
@@ -79,8 +82,9 @@ html {
 
 body {
   font-family: var(--font-body);
-  font-size: var(--fontSize-1);
-  color: var(--color-text);
+  font-size: var(--fontSize-normal);
+  color: var(--color-black);
+  background-color: var(--color-background-light);
 }
 
 footer {
@@ -118,8 +122,8 @@ h6 {
 }
 
 h1 {
-  font-weight: var(--fontWeight-black);
-  font-size: var(--fontSize-6);
+  font-weight: var(--fontWeight-bold);
+  font-size: var(--fontSize-heading);
   color: var(--color-heading-black);
 }
 
@@ -132,15 +136,15 @@ h3 {
 }
 
 h4 {
-  font-size: var(--fontSize-3);
+  font-size: var(--fontSize-heading);
 }
 
 h5 {
-  font-size: var(--fontSize-2);
+  font-size: var(--fontSize-accent);
 }
 
 h6 {
-  font-size: var(--fontSize-1);
+  font-size: var(--fontSize-normal);
 }
 
 h1 > a {
@@ -197,12 +201,12 @@ li > ul {
 }
 
 blockquote {
-  color: var(--color-text-light);
+  color: var(--color-pale);
   margin-left: calc(-1 * var(--spacing-6));
   margin-right: var(--spacing-8);
   padding: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-6);
   border-left: var(--spacing-1) solid var(--color-primary);
-  font-size: var(--fontSize-2);
+  font-size: var(--fontSize-accent);
   font-style: italic;
   margin-bottom: var(--spacing-8);
 }
@@ -284,7 +288,7 @@ a:focus {
   font-weight: var(--fontWeight-bold);
   font-family: var(--font-heading);
   text-decoration: none;
-  font-size: var(--fontSize-2);
+  font-size: var(--fontSize-accent);
 }
 
 .bio {
@@ -309,7 +313,7 @@ a:focus {
 }
 
 .blog-post header p {
-  font-size: var(--fontSize-2);
+  font-size: var(--fontSize-accent);
   font-family: var(--font-heading);
 }
 
