@@ -11,7 +11,6 @@ import parse from "html-react-parser"
 import "../css/@wordpress/block-library/build-style/style.css"
 import "../css/@wordpress/block-library/build-style/theme.css"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
@@ -31,9 +30,10 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
         itemType="http://schema.org/Article"
       >
         <header>
-          <h1 itemProp="headline">{parse(post.title)}</h1>
+          {/*<h1 itemProp="headline">{parse(post.title)}</h1>*/}
+          <h1 itemProp="headline">01 The First Encounter 遇見了</h1>
 
-          <p>{post.date}</p>
+          {/*<p>{post.date}</p>*/}
 
           {/* if we have a featured image for this post let's display it */}
           {featuredImage?.fluid && (
@@ -45,6 +45,11 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
           )}
         </header>
 
+        {/* this is placeholder content. Remove when connect to WP */ 
+        !!post.content && (
+          <section itemProp="articleBody"><p>It was a Saturday, also Lunar New Year’s Day. Festivities without spending my annual leave allowance, nice.
+          Just before bed, it was time to floss and brush my teeth. That evening, I opened my mouth super wide to make an extra check on my four wisdom teeth, to validate whether my simplified dental care regime was adequate when earlier that month I travelled light for a holiday, without bringing the electric toothbrush.</p></section>
+        )}
         {!!post.content && (
           <section itemProp="articleBody">{parse(post.content)}</section>
         )}
@@ -52,7 +57,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
         <hr />
 
         <footer>
-          <Bio />
+          
         </footer>
       </article>
 

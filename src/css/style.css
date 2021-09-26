@@ -1,6 +1,64 @@
 /* CSS Custom Properties Definitions */
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@font-face {
+  font-family: "Literata TT";
+  font-weight: 400;
+  font-style: normal;
+  src: url('./fonts/LiterataTT-TextRegular.eot'); /* IE9 */
+  src: url('./fonts/LiterataTT-TextRegular.woff2') format('woff2'), /* Super Modern Browsers */
+      url('./fonts/LiterataTT-TextRegular.woff') format('woff'), /* Pretty Modern Browsers */
+      url('./fonts/LiterataTT-TextRegular.ttf') format('truetype');  /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: "Literata TT";
+  font-weight: 400;
+  font-style: italic;
+  src: url('./fonts/LiterataTT-TextItalic.eot'); /* IE9 */
+  src: url('./fonts/LiterataTT-TextItalic.woff2') format('woff2'), /* Super Modern Browsers */
+      url('./fonts/LiterataTT-TextItalic.woff') format('woff'), /* Pretty Modern Browsers */
+      url('./fonts/LiterataTT-TextItalic.ttf') format('truetype');  /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: "Literata TT";
+  font-weight: 500;
+  font-style: normal;
+  src: url('./fonts/LiterataTT-CaptionMedium.eot'); /* IE9 */
+  src: url('./fonts/LiterataTT-CaptionMedium.woff2') format('woff2'), /* Super Modern Browsers */
+      url('./fonts/LiterataTT-CaptionMedium.woff') format('woff'), /* Pretty Modern Browsers */
+      url('./fonts/LiterataTT-CaptionMedium.ttf') format('truetype');  /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: "Literata TT";
+  font-weight: 500;
+  font-style: italic;
+  src: url('./fonts/LiterataTT-CaptionMediumItalic.eot'); /* IE9 */
+  src: url('./fonts/LiterataTT-CaptionMediumItalic.woff2') format('woff2'), /* Super Modern Browsers */
+      url('./fonts/LiterataTT-CaptionMediumItalic.woff') format('woff'), /* Pretty Modern Browsers */
+      url('./fonts/LiterataTT-CaptionMediumItalic.ttf') format('truetype');  /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: "Literata TT";
+  font-weight: 700;
+  font-style: normal;
+  src: url('./fonts/LiterataTT-SubheadBold.eot'); /* IE9 */
+  src: url('./fonts/LiterataTT-SubheadBold.woff2') format('woff2'), /* Super Modern Browsers */
+      url('./fonts/LiterataTT-SubheadBold.woff') format('woff'), /* Pretty Modern Browsers */
+      url('./fonts/LiterataTT-SubheadBold.ttf') format('truetype');  /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: "Literata TT";
+  font-weight: 700;
+  font-style: italic;
+  src: url('./fonts/LiterataTT-SubheadBoldItalic.eot'); /* IE9 */
+  src: url('./fonts/LiterataTT-SubheadBoldItalic.woff2') format('woff2'), /* Super Modern Browsers */
+      url('./fonts/LiterataTT-SubheadBoldItalic.woff') format('woff'), /* Pretty Modern Browsers */
+      url('./fonts/LiterataTT-SubheadBoldItalic.ttf') format('truetype');  /* Safari, Android, iOS */
+}
 
 :root {
   --maxWidth-none: "none";
@@ -13,7 +71,7 @@
   --maxWidth-3xl: 48rem;
   --maxWidth-4xl: 56rem;
   --maxWidth-full: "100%";
-  --maxWidth-wrapper: var(--maxWidth-2xl);
+  --maxWidth-wrapper: var(--maxWidth-xl);
 
   --spacing-px: "1px";
   --spacing-0: 0;
@@ -31,25 +89,11 @@
   --spacing-24: 6rem;
   --spacing-32: 8rem;
   
-  --fontFamily-sans: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --fontFamily-serif: "Noto Serif", serif;
-  --font-body: var(--fontFamily-serif);
-  --font-heading: var(--fontFamily-sans);
-  
   --fontWeight-normal: 400;
   --fontWeight-medium: 500;
-  --fontWeight-semibold: 600;
-  --fontWeight-bold: 700;
-
-  --lineHeight-none: 1;
-  --lineHeight-tight: 1.1;
-  --lineHeight-normal: 1.5;
-  --lineHeight-relaxed: 1.625;
+  --fontWeight-heading: 700;
   
   --fontSize-root: 16px;
-  --fontSize-small: 0.833rem;
-  --fontSize-normal: 1rem;
   --fontSize-accent: 1.25rem;
   --fontSize-heading: 2rem;
 
@@ -74,17 +118,42 @@
 }
 
 html {
-  line-height: var(--lineHeight-normal);
+  line-height: 1.625rem;
   font-size: var(--fontSize-root);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  font-family: var(--font-body);
-  font-size: var(--fontSize-normal);
+  font-family: "Literata TT", "Noto Serif", serif, system-ui, -apple-system, BlinkMacSystemFont,
+  "Segoe UI", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: var(--fontSize-root);
   color: var(--color-black);
   background-color: var(--color-background-light);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding: var(--spacing-0) var(--spacing-3) var(--spacing-0) var(--spacing-0);
+}
+
+.blogName {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.blogTitle {
+  font-weight: 700;
+  display: none;
+}
+
+.blogLogo {
+  width: 89px;
+  height: auto;
 }
 
 footer {
@@ -92,9 +161,14 @@ footer {
 }
 
 hr {
-  background: var(--color-accent);
+  background: var(--color-outline);
   height: 1px;
   border: 0;
+  margin: var(--spacing-6) var(--spacing-0);
+}
+
+.secondary {
+  color: var(--color-pale);
 }
 
 /* Heading */
@@ -106,49 +180,23 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading);
-  margin-top: var(--spacing-12);
+  font-weight: var(--fontWeight-heading);
+  margin-top: var(--spacing-0);
   margin-bottom: var(--spacing-6);
-  line-height: var(--lineHeight-tight);
-  letter-spacing: -0.025em;
-}
-
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: var(--fontWeight-bold);
   color: var(--color-heading);
 }
 
 h1 {
-  font-weight: var(--fontWeight-bold);
   font-size: var(--fontSize-heading);
-  color: var(--color-heading-black);
+  line-height: 2.5rem;
 }
 
 h2 {
-  font-size: var(--fontSize-5);
-}
-
-h3 {
-  font-size: var(--fontSize-4);
-}
-
-h4 {
-  font-size: var(--fontSize-heading);
-}
-
-h5 {
-  font-size: var(--fontSize-accent);
-}
-
-h6 {
-  font-size: var(--fontSize-normal);
+  font-size: var(--fontSize-root);
 }
 
 h1 > a {
-  color: inherit;
+  color: var(--color-primary-dark);
   text-decoration: none;
 }
 
@@ -158,16 +206,15 @@ h4 > a,
 h5 > a,
 h6 > a {
   text-decoration: none;
-  color: inherit;
+  color: var(--color-primary-dark);
 }
 
 /* Prose */
 
 p {
-  line-height: var(--lineHeight-relaxed);
   --baseline-multiplier: 0.179;
   --x-height-multiplier: 0.35;
-  margin: var(--spacing-0) var(--spacing-0) var(--spacing-8) var(--spacing-0);
+  margin: var(--spacing-0) var(--spacing-0) var(--spacing-6) var(--spacing-0);
   padding: var(--spacing-0);
 }
 
@@ -181,14 +228,18 @@ ol {
   list-style-image: none;
 }
 
+.chapters > li {
+  border-bottom: 1px solid var(--color-background-dark);
+}
+
 ul li,
 ol li {
   padding-left: var(--spacing-0);
-  margin-bottom: calc(var(--spacing-8) / 2);
+  margin-bottom: calc(var(--spacing-0) / 2);
 }
 
 li > p {
-  margin-bottom: calc(var(--spacing-8) / 2);
+  margin-bottom: calc(var(--spacing-0) / 2);
 }
 
 li *:last-child {
@@ -197,7 +248,7 @@ li *:last-child {
 
 li > ul {
   margin-left: var(--spacing-8);
-  margin-top: calc(var(--spacing-8) / 2);
+  margin-top: calc(var(--spacing-0) / 2);
 }
 
 blockquote {
@@ -234,7 +285,7 @@ table thead tr th {
 /* Link */
 
 a {
-  color: var(--color-primary);
+  color: var(--color-primary-dark);
   word-break: break-word;
 }
 
@@ -243,16 +294,31 @@ a:focus {
   text-decoration: none;
 }
 
+.button {
+  display: flex;
+  text-decoration: none;
+  font-weight: 700;
+  background-color: var(--color-background);
+  padding: var(--spacing-2) var(--spacing-5);
+  border-radius: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.button:active {
+  background-color: var(--color-background-dark);
+}
+
+.iconChapters {
+  margin-right: var(--spacing-2);
+}
+
 /* Custom classes */
 
 .global-wrapper {
   margin: var(--spacing-0) auto;
   max-width: var(--maxWidth-wrapper);
-  padding: var(--spacing-10) var(--spacing-5);
-}
-
-.global-wrapper[data-is-root-path="true"] .bio {
-  margin-bottom: var(--spacing-20);
+  padding: var(--spacing-4) var(--spacing-3);
 }
 
 .global-header {
@@ -266,7 +332,7 @@ a:focus {
 
 .post-list-item {
   margin-bottom: var(--spacing-8);
-  margin-top: var(--spacing-8);
+  margin-top: var(--spacing-3);
 }
 
 .post-list-item p {
@@ -276,36 +342,19 @@ a:focus {
 .post-list-item h2 {
   font-size: var(--fontSize-4);
   color: var(--color-primary);
-  margin-bottom: var(--spacing-2);
+  margin-bottom: var(--spacing-0);
   margin-top: var(--spacing-0);
 }
 
 .post-list-item header {
-  margin-bottom: var(--spacing-4);
+  margin-bottom: var(--spacing-3);
 }
 
 .header-link-home {
-  font-weight: var(--fontWeight-bold);
+  font-weight: var(--fontWeight-heading);
   font-family: var(--font-heading);
   text-decoration: none;
   font-size: var(--fontSize-accent);
-}
-
-.bio {
-  display: flex;
-  margin-bottom: var(--spacing-16);
-}
-
-.bio p {
-  margin-bottom: var(--spacing-0);
-}
-
-.bio-avatar {
-  margin-right: var(--spacing-4);
-  margin-bottom: var(--spacing-0);
-  max-width: 80px;
-  height: auto;
-  border-radius: 100%;
 }
 
 .blog-post header h1 {
@@ -326,6 +375,16 @@ a:focus {
 }
 
 /* Media queries */
+
+@media (min-width: 768px) {
+  :root {
+    --fontSize-root: 20px;
+  }
+
+  .blogTitle {
+    display: flex;
+  }
+}
 
 @media (max-width: 42rem) {
   blockquote {

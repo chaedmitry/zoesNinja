@@ -1908,10 +1908,6 @@ p.has-text-color a {
 .wp-block-post-author__avatar {
   margin-right: 1em;
 }
-.wp-block-post-author__bio {
-  margin-bottom: 0.7em;
-  font-size: 0.7em;
-}
 .wp-block-post-author__content {
   flex-grow: 1;
   flex-basis: 0;

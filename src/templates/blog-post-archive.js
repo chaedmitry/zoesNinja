@@ -1,8 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import parse from "html-react-parser"
-
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
@@ -28,7 +26,7 @@ const BlogIndex = ({
     <Layout isHomePage>
       <Seo title="Chapters" />
 
-      <ol style={{ listStyle: `none` }}>
+      <ol className="chapters" style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.title
 
@@ -45,7 +43,7 @@ const BlogIndex = ({
                       <span itemProp="headline">{parse(title)}</span>
                     </Link>
                   </h2>
-                  <p>{post.date}</p>
+                  <p class='secondary'>{post.date}</p>
                 </header>
               </article>
             </li>

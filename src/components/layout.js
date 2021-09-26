@@ -20,8 +20,11 @@ const Layout = ({ isHomePage, children }) => {
   `)
 
   return (
+    <div>
+    <Header/>
+    
     <div className="global-wrapper" data-is-root-path={isHomePage}>
-      <Header/>
+      
 
       <main>{children}</main>
 
@@ -32,6 +35,7 @@ const Layout = ({ isHomePage, children }) => {
         {` `}
         And <a href="https://wordpress.org/">WordPress</a>
       </footer>
+    </div>
     </div>
   )
 }
