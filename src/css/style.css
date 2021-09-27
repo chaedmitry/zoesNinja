@@ -107,6 +107,7 @@
   --color-background-light: hsla(188, 40%, 96%, 1);
   --color-black: hsla(188, 40%, 10%, 1);
   --color-pale: hsla(188, 10%, 64%, 1);
+  --color-visited: hsla(320, 40%, 32%, 1);
 }
 
 /* HTML elements */
@@ -136,8 +137,16 @@ body {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  align-items: center;
+  align-items: flex-start;
   padding: var(--spacing-0) var(--spacing-3) var(--spacing-0) var(--spacing-0);
+  margin-bottom: var(--spacing-8);
+  height: 3.5rem;
+}
+
+.nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .blogName {
@@ -157,7 +166,10 @@ body {
 }
 
 footer {
-  padding: var(--spacing-6) var(--spacing-0);
+  background-color: var(--color-background);
+  padding: var(--spacing-4) var(--spacing-3);
+  color: var(--color-pale);
+  margin-top: auto;
 }
 
 hr {
@@ -174,15 +186,10 @@ hr {
 /* Heading */
 
 h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h2 {
   font-family: var(--font-heading);
   font-weight: var(--fontWeight-heading);
   margin-top: var(--spacing-0);
-  margin-bottom: var(--spacing-6);
   color: var(--color-heading);
 }
 
@@ -200,11 +207,7 @@ h1 > a {
   text-decoration: none;
 }
 
-h2 > a,
-h3 > a,
-h4 > a,
-h5 > a,
-h6 > a {
+h2 > a {
   text-decoration: none;
   color: var(--color-primary-dark);
 }
@@ -214,7 +217,7 @@ h6 > a {
 p {
   --baseline-multiplier: 0.179;
   --x-height-multiplier: 0.35;
-  margin: var(--spacing-0) var(--spacing-0) var(--spacing-6) var(--spacing-0);
+  margin: var(--spacing-0) var(--spacing-0) var(--spacing-5) var(--spacing-0);
   padding: var(--spacing-0);
 }
 
@@ -224,7 +227,7 @@ ol {
   margin-right: var(--spacing-0);
   padding: var(--spacing-0);
   margin-bottom: var(--spacing-8);
-  list-style-position: outside;
+  list-style-position: inside;
   list-style-image: none;
 }
 
@@ -293,6 +296,9 @@ a:hover,
 a:focus {
   text-decoration: none;
 }
+a:visited {
+  color: var(--color-visited);
+}
 
 .button {
   display: flex;
@@ -305,8 +311,21 @@ a:focus {
   align-items: center;
 }
 
+.accent {
+  background-color: var(--color-primary);
+  color: var(--color-background-light);
+}
+
+.button:visited, .blogName:visited, .accent:visited {
+  color: var(--color-primary-dark);
+}
+
 .button:active {
   background-color: var(--color-background-dark);
+}
+
+.accent:active {
+  background-color: var(--color-primary-dark);
 }
 
 .iconChapters {
@@ -316,9 +335,15 @@ a:focus {
 /* Custom classes */
 
 .global-wrapper {
-  margin: var(--spacing-0) auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  margin: var(--spacing-0) auto var(--spacing-10) auto;
   max-width: var(--maxWidth-wrapper);
-  padding: var(--spacing-4) var(--spacing-3);
+  padding: var(--spacing-0) var(--spacing-3);
 }
 
 .global-header {
@@ -383,6 +408,11 @@ a:focus {
 
   .blogTitle {
     display: flex;
+  }
+
+  .header {
+    position: sticky;
+    top: 0;
   }
 }
 

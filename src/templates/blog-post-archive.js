@@ -25,7 +25,7 @@ const BlogIndex = ({
   return (
     <Layout isHomePage>
       <Seo title="Chapters" />
-
+      <h1>Chapters</h1>
       <ol className="chapters" style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.title
@@ -67,14 +67,14 @@ export default BlogIndex
 export const pageQuery = graphql`
   query WordPressPostArchive($offset: Int!, $postsPerPage: Int!) {
     allWpPost(
-      sort: { fields: [date], order: DESC }
+      sort: { fields: [date], order: ASC }
       limit: $postsPerPage
       skip: $offset
     ) {
       nodes {
         excerpt
         uri
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "MMMM D, YYYY")
         title
         excerpt
       }

@@ -53,12 +53,6 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
         {!!post.content && (
           <section itemProp="articleBody">{parse(post.content)}</section>
         )}
-
-        <hr />
-
-        <footer>
-          
-        </footer>
       </article>
 
       <nav className="blog-post-nav">
@@ -74,7 +68,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
           <li>
             {previous && (
               <Link to={previous.uri} rel="prev">
-                ← Previous chapter
+                <h2>← Prev. chapter</h2>
               </Link>
             )}
           </li>
@@ -82,7 +76,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
           <li>
             {next && (
               <Link to={next.uri} rel="next">
-                Next chapter →
+                <h2>Next chapter →</h2>
               </Link>
             )}
           </li>

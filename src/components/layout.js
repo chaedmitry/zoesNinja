@@ -20,22 +20,14 @@ const Layout = ({ isHomePage, children }) => {
   `)
 
   return (
-    <div>
+    <div className="global-wrapper">
     <Header/>
-    
-    <div className="global-wrapper" data-is-root-path={isHomePage}>
-      
-
+    <div className="content" data-is-root-path={isHomePage}>
       <main>{children}</main>
-
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
-        {` `}
-        And <a href="https://wordpress.org/">WordPress</a>
-      </footer>
     </div>
+    <footer>
+        © {new Date().getFullYear()}, From Zoe with love.
+    </footer>
     </div>
   )
 }
