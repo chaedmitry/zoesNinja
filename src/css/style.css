@@ -81,6 +81,7 @@
   --spacing-4: 1rem;
   --spacing-5: 1.25rem;
   --spacing-6: 1.5rem;
+  --spacing-7: 1.75rem;
   --spacing-8: 2rem;
   --spacing-10: 2.5rem;
   --spacing-12: 3rem;
@@ -221,6 +222,11 @@ p {
   padding: var(--spacing-0);
 }
 
+small {
+  font-size: var(--fontSize-root);
+  color: var(--color-pale);
+}
+
 ul,
 ol {
   margin-left: var(--spacing-0);
@@ -255,14 +261,14 @@ li > ul {
 }
 
 blockquote {
-  color: var(--color-pale);
-  margin-left: calc(-1 * var(--spacing-6));
-  margin-right: var(--spacing-8);
-  padding: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-6);
-  border-left: var(--spacing-1) solid var(--color-primary);
+  color: var(--color-black);
   font-size: var(--fontSize-accent);
-  font-style: italic;
-  margin-bottom: var(--spacing-8);
+  font-weight: 500;
+  line-height: var(--spacing-7);
+  text-align: center;
+  padding: var(--spacing-3) var(--spacing-6) var(--spacing-8) var(--spacing-6);
+  margin: 0;
+  background: radial-gradient(var(--color-secondary-light), var(--color-background-light) 70%);
 }
 
 blockquote > :last-child {
@@ -290,15 +296,26 @@ table thead tr th {
 a {
   color: var(--color-primary-dark);
   word-break: break-word;
-}
-
-a:hover,
-a:focus {
   text-decoration: none;
 }
-a:visited {
-  color: var(--color-visited);
-}
+  a:hover {
+    text-decoration: none;
+  }
+  a:focus {
+    outline: none;
+  }
+  a:focus-visible {
+    box-shadow: 0 0 0 3px var(--color-outline);
+  }
+  a:active {
+    color: var(--color-primary);
+  }
+  a:visited {
+    color: var(--color-visited);
+  }
+  a:visited:active {
+    color: var(--color-primary);
+  }
 
 .button {
   display: flex;
@@ -310,29 +327,32 @@ a:visited {
   justify-content: center;
   align-items: center;
 }
+  .button:hover {
+    text-decoration: none;
+  }
+  .button:active {
+    background-color: var(--color-background-dark);
+    color: var(--color-primary-dark);
+  }
 
 .accent {
   background-color: var(--color-primary);
   color: var(--color-background-light);
 }
+  .accent:active {
+    background-color: var(--color-primary-dark);
+    color: var(--color-background-light);
+  }
 
-.button:visited, .blogName:visited, .accent:visited {
+.button:visited, .blogName:visited, .accent:visited, .pagination:visited {
   color: var(--color-primary-dark);
 }
 
-.button:active {
-  background-color: var(--color-background-dark);
-}
-
-.accent:active {
-  background-color: var(--color-primary-dark);
-}
+/* Custom classes */
 
 .iconChapters {
   margin-right: var(--spacing-2);
 }
-
-/* Custom classes */
 
 .global-wrapper {
   min-height: 100vh;
@@ -342,7 +362,7 @@ a:visited {
 
 .content {
   margin: var(--spacing-0) auto var(--spacing-10) auto;
-  max-width: var(--maxWidth-wrapper);
+  width: var(--maxWidth-wrapper);
   padding: var(--spacing-0) var(--spacing-3);
 }
 

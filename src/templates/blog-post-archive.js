@@ -53,11 +53,11 @@ const BlogIndex = ({
 
       {previousPagePath && (
         <>
-          <Link to={previousPagePath}>Previous page</Link>
+          <Link className="pagination" to={previousPagePath}>Previous page</Link>
           <br />
         </>
       )}
-      {nextPagePath && <Link to={nextPagePath}>Next page</Link>}
+      {nextPagePath && <Link className="pagination" to={nextPagePath}>Next page</Link>}
     </Layout>
   )
 }

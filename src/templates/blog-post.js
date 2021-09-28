@@ -47,8 +47,8 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
 
         {/* this is placeholder content. Remove when connect to WP */ 
         !!post.content && (
-          <section itemProp="articleBody"><p>It was a Saturday, also Lunar New Year’s Day. Festivities without spending my annual leave allowance, nice.
-          Just before bed, it was time to floss and brush my teeth. That evening, I opened my mouth super wide to make an extra check on my four wisdom teeth, to validate whether my simplified dental care regime was adequate when earlier that month I travelled light for a holiday, without bringing the electric toothbrush.</p></section>
+          <section itemProp="articleBody"><p>It was a Saturday, also <i>Lunar New Year’s Day</i>. Festivities without spending my annual leave allowance, nice.
+          Just before bed, it was time to floss and brush my teeth. That evening, I opened my mouth super wide to make an extra check on my four wisdom teeth, to validate whether my simplified dental care regime was <strong>adequate</strong> when earlier that month I travelled light for a holiday, without bringing the electric toothbrush.</p></section>
         )}
         {!!post.content && (
           <section itemProp="articleBody">{parse(post.content)}</section>
@@ -67,16 +67,16 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
         >
           <li>
             {previous && (
-              <Link to={previous.uri} rel="prev">
-                <h2>← Prev. chapter</h2>
+              <Link className="pagination" to={previous.uri} rel="prev">
+                ← Prev. chapter
               </Link>
             )}
           </li>
 
           <li>
             {next && (
-              <Link to={next.uri} rel="next">
-                <h2>Next chapter →</h2>
+              <Link className="pagination" to={next.uri} rel="next">
+                Next chapter →
               </Link>
             )}
           </li>
