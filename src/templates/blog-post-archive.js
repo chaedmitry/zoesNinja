@@ -43,7 +43,7 @@ const BlogIndex = ({
                       <span itemProp="headline">{parse(title)}</span>
                     </Link>
                   </h2>
-                  <p class='secondary'>{post.date}</p>
+                  <p className='secondary'>{post.date}</p>
                 </header>
               </article>
             </li>

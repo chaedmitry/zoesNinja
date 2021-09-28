@@ -20,14 +20,14 @@ const Layout = ({ isHomePage, children }) => {
   `)
 
   return (
-    <div className="global-wrapper">
+    <div className="global-wrapper" data-is-root-path={isHomePage}>
     <Header/>
-    <div className="content" data-is-root-path={isHomePage}>
+    <div className="content">
       <main>{children}</main>
+      <footer>
+        © {new Date().getFullYear()}. From Zoe with love.
+      </footer>
     </div>
-    <footer>
-        © {new Date().getFullYear()}, From Zoe with love.
-    </footer>
     </div>
   )
 }
