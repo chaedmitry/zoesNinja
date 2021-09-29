@@ -103,11 +103,13 @@
   --color-secondary: hsla(6, 91%, 76%, 1);
   --color-secondary-light: hsla(6, 91%, 86%, 1);
   --color-outline: hsla(188, 40%, 72%, 1);
-  --color-background: hsla(188, 40%, 92%, 1);
+  --color-background: hsla(188, 40%, 90%, 1);
   --color-background-dark: hsla(188, 40%, 88%, 1);
   --color-background-light: hsla(188, 30%, 96%, 1);
+  --color-background-vivid: hsla(188, 60%, 88%, 1);
   --color-black: hsla(188, 40%, 10%, 1);
   --color-pale: hsla(188, 10%, 64%, 1);
+  --color-pale-light: hsla(188, 10%, 88%, 1);
   --color-visited: hsla(320, 40%, 32%, 1);
 }
 
@@ -120,7 +122,6 @@
 }
 
 html {
-  line-height: 1.625rem;
   font-size: var(--fontSize-root);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -130,6 +131,7 @@ body {
   font-family: "Literata TT", "Noto Serif", serif, system-ui, -apple-system, BlinkMacSystemFont,
   "Segoe UI", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: var(--fontSize-root);
+  line-height: var(--spacing-6);
   color: var(--color-black);
   background-color: var(--color-background-light);
 }
@@ -173,7 +175,7 @@ footer {
 }
 
 hr {
-  background: var(--color-outline);
+  background: var(--color-pale);
   height: 1px;
   border: 0;
   margin: var(--spacing-6) var(--spacing-0);
@@ -187,7 +189,6 @@ hr {
 
 h1,
 h2 {
-  font-family: var(--font-heading);
   font-weight: var(--fontWeight-heading);
   margin-top: var(--spacing-0);
   color: var(--color-heading);
@@ -195,10 +196,11 @@ h2 {
 
 h1 {
   font-size: var(--fontSize-heading);
-  line-height: 2.5rem;
+  line-height: var(--spacing-10);
 }
 
 h2 {
+  font-size: var(--fontSize-accent);
   font-size: var(--fontSize-root);
 }
 
@@ -237,7 +239,7 @@ ol {
 }
 
 .chapters > li {
-  border-bottom: 1px solid var(--color-background-dark);
+  border-bottom: 1px solid var(--color-pale-light);
 }
 
 ul li,
@@ -259,11 +261,23 @@ li > ul {
   margin-top: calc(var(--spacing-0) / 2);
 }
 
+q { 
+  display: block;
+  max-width: var(--maxWidth-sm);
+  font-size: var(--fontSize-accent);
+  font-weight: 500;
+  line-height: var(--spacing-8);
+  padding: var(--spacing-6) var(--spacing-8) var(--spacing-8) var(--spacing-8);
+  margin: var(--spacing-8) 0;
+  background: linear-gradient(150deg, var(--color-background-vivid), var(--color-background-dark));
+  border-radius: var(--spacing-8) var(--spacing-8) var(--spacing-8) var(--spacing-2);
+}
+
 blockquote {
   color: var(--color-black);
   font-size: var(--fontSize-accent);
   font-weight: 500;
-  line-height: var(--spacing-7);
+  line-height: var(--spacing-8);
   text-align: center;
   padding: var(--spacing-3) var(--spacing-6) var(--spacing-8) var(--spacing-6);
   margin: 0;
@@ -295,11 +309,7 @@ table thead tr th {
 a {
   color: var(--color-primary-dark);
   word-break: break-word;
-  text-decoration: none;
 }
-  a:hover {
-    text-decoration: none;
-  }
   a:focus {
     outline: none;
   }
@@ -321,25 +331,33 @@ a {
   text-decoration: none;
   font-weight: 700;
   background-color: var(--color-background);
-  padding: var(--spacing-2) var(--spacing-5);
+  padding: var(--spacing-2) var(--spacing-6);
   border-radius: 2rem;
   justify-content: center;
   align-items: center;
 }
   .button:hover {
     text-decoration: none;
+    background-color: var(--color-background-dark);
   }
   .button:active {
-    background-color: var(--color-background-dark);
+    background-color: var(--color-background-vivid);
+    color: var(--color-primary-dark);
+  }
+  .button:visited:active {
     color: var(--color-primary-dark);
   }
 
 .accent {
   background-color: var(--color-primary);
   color: var(--color-background-light);
+  display: inline-block;
 }
-  .accent:active {
+  .accent:hover {
     background-color: var(--color-primary-dark);
+  }
+  .accent:active {
+    background-color: var(--color-black);
     color: var(--color-background-light);
   }
 
@@ -378,9 +396,8 @@ a {
 }
 
 .post-list-item h2 {
-  font-size: var(--fontSize-4);
   color: var(--color-primary);
-  margin-bottom: var(--spacing-0);
+  margin-bottom: var(--spacing-1);
   margin-top: var(--spacing-0);
 }
 
@@ -390,7 +407,6 @@ a {
 
 .header-link-home {
   font-weight: var(--fontWeight-heading);
-  font-family: var(--font-heading);
   text-decoration: none;
   font-size: var(--fontSize-accent);
 }
@@ -401,7 +417,6 @@ a {
 
 .blog-post header p {
   font-size: var(--fontSize-accent);
-  font-family: var(--font-heading);
 }
 
 .blog-post-nav ul {

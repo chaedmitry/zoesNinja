@@ -51,13 +51,13 @@ const BlogIndex = ({
         })}
       </ol>
 
-      {previousPagePath && (
+      {/*{previousPagePath && (
         <>
           <Link className="pagination" to={previousPagePath}>Previous page</Link>
           <br />
         </>
       )}
-      {nextPagePath && <Link className="pagination" to={nextPagePath}>Next page</Link>}
+      {nextPagePath && <Link className="pagination" to={nextPagePath}>Next page</Link>}*/}
     </Layout>
   )
 }
@@ -65,10 +65,9 @@ const BlogIndex = ({
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query WordPressPostArchive($offset: Int!, $postsPerPage: Int!) {
+  query WordPressPostArchive($offset: Int!) {
     allWpPost(
       sort: { fields: [date], order: ASC }
-      limit: $postsPerPage
       skip: $offset
     ) {
       nodes {
