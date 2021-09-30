@@ -21,13 +21,13 @@ const Layout = ({ isHomePage, children }) => {
 
   return (
     <div className="global-wrapper" data-is-root-path={isHomePage}>
-    <Header/>
-    <div className="content">
-      <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}. From Zoe with love.
-      </footer>
-    </div>
+      <Header/>
+      <div className="content">
+        <main>{children}</main>
+        <footer>
+          © {new Date().getFullYear()}. From Zoe with ❤️
+        </footer> 
+      </div>
     </div>
   )
 }
