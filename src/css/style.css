@@ -1,5 +1,7 @@
 /* CSS Custom Properties Definitions */
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700&display=swap');
+
 @font-face {
   font-family: "Literata TT";
   font-weight: 400;
@@ -107,6 +109,7 @@
   --color-background: hsla(188, 40%, 90%, 1);
   --color-background-dark: hsla(188, 40%, 88%, 1);
   --color-background-light: hsla(188, 30%, 96%, 1);
+  --color-background-light-5: hsla(188, 30%, 96%, .05);
   --color-background-vivid: hsla(188, 60%, 88%, 1);
   --color-black: hsla(188, 20%, 5%, 1);
   --color-pale: hsla(188, 10%, 64%, 1);
@@ -224,6 +227,16 @@ p {
   padding: var(--spacing-0);
 }
 
+.cn {
+  font-family: 'Noto Serif TC', serif;
+  font-weight: 400;
+}
+
+.latin {
+  font-family: "Literata TT";
+  font-weight: 400;
+}
+
 small {
   font-size: var(--fontSize-root);
   color: var(--color-pale);
@@ -282,7 +295,7 @@ blockquote {
   text-align: center;
   padding: var(--spacing-3) var(--spacing-6) var(--spacing-8) var(--spacing-6);
   margin: 0;
-  background: radial-gradient(var(--color-secondary), var(--color-background-light) 65%);
+  background: radial-gradient(var(--color-secondary), var(--color-background-light-5) 65%);
 }
 
 blockquote > :last-child {

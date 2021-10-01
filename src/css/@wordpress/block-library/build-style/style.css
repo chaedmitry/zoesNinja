@@ -787,11 +787,14 @@ section.wp-block-cover-image > h2,
   text-align: right;
 }
 .wp-block-file .wp-block-file__button {
-  background: #32373c;
-  border-radius: 2em;
-  color: #fff;
-  font-size: 0.8em;
-  padding: 0.5em 1em;
+  text-decoration: none;
+  font-weight: 700;
+  padding: var(--spacing-2) var(--spacing-6);
+  border-radius: var(--spacing-8);
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-background);
+  box-shadow:inset 0px 0px 0px 1px var(--color-background-dark);
 }
 .wp-block-file a.wp-block-file__button {
   text-decoration: none;
@@ -2928,7 +2931,8 @@ pre.wp-block-verse {
 }
 
 .has-large-font-size {
-  font-size: 2.25em;
+  font-size: var(--fontSize-accent);
+  line-height: var(--spacing-7);
 }
 
 .has-larger-font-size,
