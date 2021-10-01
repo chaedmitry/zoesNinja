@@ -54,7 +54,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
           <section itemProp="articleBody">{parse(post.content)}</section>
         )}
       </article>
-
+      {/*pagination*/}
       <nav className="blog-post-nav">
         <ul
           style={{

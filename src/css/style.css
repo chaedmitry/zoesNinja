@@ -385,6 +385,7 @@ a {
 }
   .button-accent:hover {
     background-color: var(--color-primary-dark);
+    color: var(--color-background-light);
   }
   .button-accent:active {
     background-color: var(--color-black);
@@ -412,7 +413,7 @@ a {
 .content {
   margin: var(--spacing-0) auto;
   max-width: var(--maxWidth-wrapper);
-  padding: var(--spacing-0) var(--spacing-6) var(--spacing-0) var(--spacing-3);
+  padding: var(--spacing-0) var(--spacing-6) var(--spacing-0) var(--spacing-4);
 }
 
 .global-header {
