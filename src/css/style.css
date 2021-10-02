@@ -98,7 +98,7 @@
   
   --fontSize-root: 18px;
   --fontSize-accent: 1.25rem;
-  --fontSize-heading: 2.25rem;
+  --fontSize-heading: 2.75rem;
 
   --color-primary: hsla(188, 40%, 47%, 1);
   --color-primary-20: hsla(188, 40%, 47%, .2);
@@ -206,7 +206,7 @@ h2 {
 
 h1 {
   font-size: var(--fontSize-heading);
-  line-height: var(--spacing-10);
+  line-height: var(--spacing-12);
 }
 
 h2 {
