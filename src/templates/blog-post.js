@@ -29,11 +29,10 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
         itemScope
         itemType="http://schema.org/Article"
       >
+        <p className="secondary date">{post.date}</p>
         <header>
           {/*<h1 itemProp="headline">{parse(post.title)}</h1>*/}
-          <h1 itemProp="headline">01 The First Encounter 遇見了</h1>
-
-          {/*<p>{post.date}</p>*/}
+          <h1 itemProp="headline">01 The First Encounter<br></br>遇見了</h1>
 
           {/* if we have a featured image for this post let's display it */}
           {featuredImage?.fluid && (
@@ -55,27 +54,20 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
         )}
       </article>
       {/*pagination*/}
+      
       <nav className="blog-post-nav">
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
+        <ul>
+          {/*<li>
             {previous && (
-              <Link className="pagination" to={previous.uri} rel="prev">
-                ← Prev. chapter
+              <Link className="button button-normal" to={previous.uri} rel="prev">
+                ← Previous
               </Link>
             )}
-          </li>
+            </li>*/}
 
           <li>
             {next && (
-              <Link className="pagination" to={next.uri} rel="next">
+              <Link className="button button-normal" to={next.uri} rel="next">
                 Next chapter →
               </Link>
             )}

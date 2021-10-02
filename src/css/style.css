@@ -149,6 +149,7 @@ body {
   padding: var(--spacing-0) var(--spacing-3) var(--spacing-0) var(--spacing-0);
   margin-bottom: var(--spacing-8);
   height: 3.5rem;
+  z-index: 1;
 }
 
 .nav {
@@ -187,6 +188,10 @@ hr {
 
 .secondary {
   color: var(--color-pale);
+}
+
+.date {
+  margin: 0;
 }
 
 /* Heading */
@@ -305,6 +310,11 @@ blockquote > :last-child {
 blockquote > ul,
 blockquote > ol {
   list-style-position: inside;
+}
+
+img {
+  width: 100%;
+  margin-bottom: var(--spacing-5);
 }
 
 table {
@@ -465,15 +475,27 @@ a {
 }
 
 .blog-post header h1 {
-  margin: var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0);
+  margin: var(--spacing-0) var(--spacing-0) var(--spacing-5) var(--spacing-0);
 }
 
 .blog-post header p {
   font-size: var(--fontSize-accent);
 }
 
+.blog-post-nav {
+  margin-top: var(--spacing-8);
+}
+
 .blog-post-nav ul {
   margin: var(--spacing-0);
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+
+.blog-post-nav ul li {
+  margin-right: var(--spacing-2);
 }
 
 .gatsby-highlight {
@@ -499,12 +521,5 @@ a {
   .header {
     position: sticky;
     top: 0;
-  }
-}
-
-@media (max-width: 42rem) {
-  ul,
-  ol {
-    list-style-position: inside;
   }
 }
