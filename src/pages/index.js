@@ -8,7 +8,7 @@ function Home() {
   return (
       <Layout isHomePage>
         <Seo title="Home" />
-        <img src={girl}/>
+        <img className="author-illustration" src={girl}/>
         <h1>Hi, I'm Zoe, and here's my cancer journey</h1>
         <p>2020 had just begun when I was hit by an unexpected diagnosis of a very rare cancer of the salivary gland. It jolted the hectic life of this forty-something years old into a sudden halt as surgery, radiotherapy and a long recovery phase ensued.</p>
         <p>Several friends independently came up with the suggestion of recording my cancer journey while I am on this mandatory mid-life career break. Perhaps my experience would bring solace and hope to other cancer patients, their families and friends.</p>

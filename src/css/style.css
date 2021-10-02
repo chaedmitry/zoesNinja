@@ -106,11 +106,9 @@
   --color-primary-20: hsla(188, 40%, 47%, .2);
   --color-primary-dark: hsla(188, 40%, 32%, 1);
   --color-secondary: hsla(6, 91%, 76%, 1);
-  --color-secondary-light: hsla(6, 91%, 86%, 1);
-  --color-outline: hsla(188, 40%, 72%, 1);
-  --color-background: hsla(188, 40%, 90%, 1);
-  --color-background-dark: hsla(188, 40%, 88%, 1);
-  --color-background-lightest: hsla(188, 20%, 98%, 1);
+  --color-outline: hsla(188, 30%, 88%, 1);
+  --color-background: hsla(188, 30%, 90%, 1);
+  --color-background-lightest: hsla(188, 30%, 98%, 1);
   --color-background-light: hsla(188, 30%, 96%, 1);
   --color-background-light-5: hsla(188, 30%, 96%, .05);
   --color-background-vivid: hsla(188, 60%, 88%, 1);
@@ -286,7 +284,7 @@ q {
   line-height: var(--spacing-7);
   padding: var(--spacing-6) var(--spacing-8) var(--spacing-8) var(--spacing-8);
   margin: var(--spacing-8) 0;
-  background: linear-gradient(150deg, var(--color-background-vivid), var(--color-background-dark));
+  background: linear-gradient(150deg, var(--color-background-vivid), var(--color-outline));
   border-radius: var(--spacing-8) var(--spacing-8) var(--spacing-8) var(--spacing-2);
 }
 
@@ -310,7 +308,7 @@ blockquote > ol {
   list-style-position: inside;
 }
 
-img {
+.author-illustration {
   width: 100%;
   margin-bottom: var(--spacing-5);
 }
@@ -392,6 +390,9 @@ a {
   color: var(--color-background-light);
   background-color: var(--color-primary);
 }
+  .button-accent .icon-path {
+    fill: var(--color-background-light);
+  }
   .button-accent:hover {
     background-color: var(--color-primary-dark);
     color: var(--color-background-light);
