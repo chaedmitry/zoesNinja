@@ -73,7 +73,7 @@
   --maxWidth-3xl: 48rem;
   --maxWidth-4xl: 56rem;
   --maxWidth-full: "100%";
-  --maxWidth-wrapper: var(--maxWidth-lg);
+  --maxWidth-wrapper: var(--maxWidth-xl);
 
   --spacing-px: "1px";
   --spacing-0: 0;
