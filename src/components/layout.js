@@ -1,6 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header.js"
+import Footer from "./footer.js"
 
 const Layout = ({ isHomePage, children }) => {
   const {
@@ -22,9 +23,7 @@ const Layout = ({ isHomePage, children }) => {
         <Header/>
           <div className="content">
             <main>{children}</main>
-            <footer>
-              © {new Date().getFullYear()}. From Zoe with ❤️
-            </footer> 
+            <Footer />
           </div>
       </div>
   )
