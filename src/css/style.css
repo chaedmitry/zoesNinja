@@ -1,6 +1,6 @@
 /* CSS Custom Properties Definitions */
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&display=swap');
 
 @font-face {
   font-family: "Literata TT";
@@ -239,7 +239,7 @@ p {
 
 .cn {
   font-family: 'Noto Serif TC', serif;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .latin {
@@ -467,7 +467,7 @@ a {
 }
 
 .post-list-item {
-  margin-top: var(--spacing-3);
+  margin-top: var(--spacing-4);
 }
 
 .post-list-item p {
