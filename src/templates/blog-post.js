@@ -32,7 +32,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
         <p className="secondary date">{post.date}</p>
         <header>
           {/*<h1 itemProp="headline">{parse(post.title)}</h1>*/}
-          <h1 itemProp="headline">01 The First Encounter<br></br>遇見了</h1>
+          <h1 itemProp="headline">01 The First Encounter<br></br><span className="cn">遇見了</span></h1>
 
           {/* if we have a featured image for this post let's display it */}
           {featuredImage?.fluid && (
@@ -93,7 +93,7 @@ export const pageQuery = graphql`
       excerpt
       content
       title
-      date(formatString: "MMMM DD, YYYY")
+      date(formatString: "MMMM D, YYYY")
 
       featuredImage {
         node {

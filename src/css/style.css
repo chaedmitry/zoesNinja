@@ -6,6 +6,7 @@
   font-family: "Literata TT";
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
   src: url('./fonts/LiterataTT-TextRegular.eot'); /* IE9 */
   src: url('./fonts/LiterataTT-TextRegular.woff2') format('woff2'), /* Super Modern Browsers */
       url('./fonts/LiterataTT-TextRegular.woff') format('woff'), /* Pretty Modern Browsers */
@@ -16,6 +17,7 @@
   font-family: "Literata TT";
   font-weight: 400;
   font-style: italic;
+  font-display: swap;
   src: url('./fonts/LiterataTT-TextItalic.eot'); /* IE9 */
   src: url('./fonts/LiterataTT-TextItalic.woff2') format('woff2'), /* Super Modern Browsers */
       url('./fonts/LiterataTT-TextItalic.woff') format('woff'), /* Pretty Modern Browsers */
@@ -26,6 +28,7 @@
   font-family: "Literata TT";
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
   src: url('./fonts/LiterataTT-CaptionMedium.eot'); /* IE9 */
   src: url('./fonts/LiterataTT-CaptionMedium.woff2') format('woff2'), /* Super Modern Browsers */
       url('./fonts/LiterataTT-CaptionMedium.woff') format('woff'), /* Pretty Modern Browsers */
@@ -36,6 +39,7 @@
   font-family: "Literata TT";
   font-weight: 500;
   font-style: italic;
+  font-display: swap;
   src: url('./fonts/LiterataTT-CaptionMediumItalic.eot'); /* IE9 */
   src: url('./fonts/LiterataTT-CaptionMediumItalic.woff2') format('woff2'), /* Super Modern Browsers */
       url('./fonts/LiterataTT-CaptionMediumItalic.woff') format('woff'), /* Pretty Modern Browsers */
@@ -46,6 +50,7 @@
   font-family: "Literata TT";
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
   src: url('./fonts/LiterataTT-SubheadBold.eot'); /* IE9 */
   src: url('./fonts/LiterataTT-SubheadBold.woff2') format('woff2'), /* Super Modern Browsers */
       url('./fonts/LiterataTT-SubheadBold.woff') format('woff'), /* Pretty Modern Browsers */
@@ -56,6 +61,7 @@
   font-family: "Literata TT";
   font-weight: 700;
   font-style: italic;
+  font-display: swap;
   src: url('./fonts/LiterataTT-SubheadBoldItalic.eot'); /* IE9 */
   src: url('./fonts/LiterataTT-SubheadBoldItalic.woff2') format('woff2'), /* Super Modern Browsers */
       url('./fonts/LiterataTT-SubheadBoldItalic.woff') format('woff'), /* Pretty Modern Browsers */
@@ -171,7 +177,6 @@ body {
 }
 
 .blog-title {
-  font-weight: 700;
   display: none;
 }
 
@@ -226,6 +231,10 @@ h1 > a {
 h2 > a {
   color: var(--color-primary-dark);
   text-decoration: none;
+}
+
+h1 .cn {
+  font-weight: 700;
 }
 
 /* Prose */
@@ -372,40 +381,40 @@ a {
     color: var(--color-primary-dark);
   }
   .button-normal:active .icon-path {
-    fill: var(--color-background-light);
+    fill: var(--color-background-lightest);
   }
   .button-normal:active {
     background-color: var(--color-primary);
-    color: var(--color-background-light);
+    color: var(--color-background-lightest);
     box-shadow: none;
   }
   .button-normal:visited {
     color: var(--color-primary-dark);
   }
   .button-normal:visited:active {
-    color: var(--color-background-light);
+    color: var(--color-background-lightest);
   }
 
 .button-accent {
-  color: var(--color-background-light);
+  color: var(--color-background-lightest);
   background-color: var(--color-primary);
 }
   .button-accent .icon-path {
-    fill: var(--color-background-light);
+    fill: var(--color-background-lightest);
   }
   .button-accent:hover {
     background-color: var(--color-primary-dark);
-    color: var(--color-background-light);
+    color: var(--color-background-lightest);
   }
   .button-accent:active {
     background-color: var(--color-black);
-    color: var(--color-background-light);
+    color: var(--color-background-lightest);
   }
   .button-accent:visited {
-    color: var(--color-background-light);
+    color: var(--color-background-lightest);
   }
   .button-accent:visited:active {
-    color: var(--color-background-light);
+    color: var(--color-background-lightest);
   }
 
 .button-icon {
@@ -531,6 +540,7 @@ a {
   .blog-title {
     display: flex;
     align-self: center;
+    font-weight: 700;
   }
 
   .blog-logo {
