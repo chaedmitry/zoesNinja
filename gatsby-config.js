@@ -15,14 +15,14 @@ module.exports = {
    */
   plugins: [
     {
-      /**
+     /** 
        * First up is the WordPress source plugin that connects Gatsby
        * to your WordPress site.
        *
        * visit the plugin docs to learn more
        * https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-source-wordpress/README.md
        *
-       */
+      */ 
       resolve: `gatsby-source-wordpress`,
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
@@ -43,6 +43,13 @@ module.exports = {
       options: {
         name: `assets`,
         path: `${__dirname}/content/assets`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `articles`,
+        path: `${__dirname}/content/articles`,
       },
     },
 

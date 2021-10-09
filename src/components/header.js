@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import logo from "../../content/assets/logo.png"
+import logo from "../../static/logo.png"
 
 
 export default function Header() {

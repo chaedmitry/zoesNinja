@@ -102,7 +102,7 @@
   --fontWeight-medium: 500;
   --fontWeight-heading: 700;
   
-  --fontSize-root: 18px;
+  --fontSize-root: 17px;
   --fontSize-accent: 1.25rem;
   --fontSize-heading: 2rem;
 
@@ -110,6 +110,7 @@
 
   --color-primary: hsla(188, 40%, 47%, 1);
   --color-primary-20: hsla(188, 40%, 47%, .2);
+  --color-primary-50: hsla(188, 40%, 47%, .5);
   --color-primary-dark: hsla(188, 40%, 32%, 1);
   --color-secondary: hsla(6, 91%, 76%, 1);
   --color-outline: hsla(188, 30%, 88%, 1);
@@ -208,7 +209,6 @@ hr {
 
 h1,
 h2 {
-  font-weight: var(--fontWeight-heading);
   margin-top: var(--spacing-0);
   margin-bottom: var(--spacing-5);
   color: var(--color-heading);
@@ -216,11 +216,13 @@ h2 {
 
 h1 {
   font-size: var(--fontSize-heading);
+  font-weight: var(--fontWeight-normal);
   line-height: var(--lineHeight-heading);
 }
 
 h2 {
   font-size: var(--fontSize-root);
+  font-weight: var(--fontWeight-heading);
 }
 
 h1 > a {
@@ -234,7 +236,7 @@ h2 > a {
 }
 
 h1 .cn {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 /* Prose */
@@ -301,6 +303,7 @@ blockquote {
   color: var(--color-black);
   font-size: var(--fontSize-accent);
   font-weight: 500;
+  font-style: italic;
   line-height: var(--spacing-7);
   text-align: center;
   padding: var(--spacing-3) var(--spacing-6) var(--spacing-8) var(--spacing-6);
@@ -347,7 +350,7 @@ a {
     outline: none;
   }
   a:focus-visible {
-    box-shadow: 0 0 0 3px var(--color-outline);
+    box-shadow: 0 0 0 3px var(--color-primary-50);
   }
   a:active {
     color: var(--color-black);

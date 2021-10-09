@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from 'gatsby'
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import girl from "../../content/assets/girl.jpeg"
+import girl from "../../static/girl.jpeg"
 
 function Home() {
   return (
