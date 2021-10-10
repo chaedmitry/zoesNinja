@@ -14,44 +14,20 @@ import "../css/@wordpress/block-library/build-style/theme.css"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const BlogPostTemplate = ({ data: { previous, next, post } }) => {
-  const featuredImage = {
-    fluid: post.featuredImage?.node?.localFile?.childImageSharp?.fluid,
-    alt: post.featuredImage?.node?.alt || ``,
-  }
+const BlogPostTemplate = ({ data }) => {
+  const { html } = data.markdownRemark
+  const { title, category, excerpt } = data.markdownRemark.frontmatter
 
   return (
     <Layout>
-      <Seo title={post.title} description={post.excerpt} />
+      <Seo title={title} description={excerpt} />
 
-      <article
-        className="blog-post"
-        itemScope
-        itemType="http://schema.org/Article"
-      >
-        <p className="secondary date">{post.date}</p>
+      <article className="blog-post" itemScope itemType="http://schema.org/Article">
+        <p className="secondary category">{category}</p>
         <header>
-          {/*<h1 itemProp="headline">{parse(post.title)}</h1>*/}
-          <h1 itemProp="headline">01 The First Encounter<br></br><span className="cn">遇見了</span></h1>
-
-          {/* if we have a featured image for this post let's display it */}
-          {featuredImage?.fluid && (
-            <Image
-              fluid={featuredImage.fluid}
-              alt={featuredImage.alt}
-              style={{ marginBottom: 50 }}
-            />
-          )}
+          <h1 itemProp="headline">{title}</h1>
         </header>
-
-        {/* this is placeholder content. Remove when connect to WP */ 
-        !!post.content && (
-          <section itemProp="articleBody"><p>It was a Saturday, also <i>Lunar New Year’s Day</i>. Festivities without spending my annual leave allowance, nice.
-          Just before bed, it was time to floss and brush my teeth. That evening, I opened my mouth super wide to make an extra check on my four wisdom teeth, to validate whether my simplified dental care regime was <strong>adequate</strong> when earlier that month I travelled light for a holiday, without bringing the electric toothbrush.</p></section>
-        )}
-        {!!post.content && (
-          <section itemProp="articleBody">{parse(post.content)}</section>
-        )}
+        <section itemProp="articleBody" dangerouslySetInnerHTML={{__html: html}}/>
       </article>
       {/*pagination*/}
       
@@ -66,11 +42,9 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
             </li>*/}
 
           <li>
-            {next && (
-              <Link className="button button-normal" to={next.uri} rel="next">
-                Next: {next.title} → 
-              </Link>
-            )}
+            <Link className="button button-normal" to='/' rel="next">
+                Next: → 
+            </Link>
           </li>
         </ul>
       </nav>
@@ -80,45 +54,15 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
 
 export default BlogPostTemplate
 
-export const pageQuery = graphql`
-  query BlogPostById(
-    # these variables are passed in via createPage.pageContext in gatsby-node.js
-    $id: String!
-    $previousPostId: String
-    $nextPostId: String
-  ) {
-    # selecting the current post by id
-    post: wpPost(id: { eq: $id }) {
-      id
-      excerpt
-      content
-      title
-      date(formatString: "MMMM D, YYYY")
-
-      featuredImage {
-        node {
-          altText
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 1000, quality: 100) {
-                ...GatsbyImageSharpFluid_tracedSVG
-              }
-            }
-          }
-        }
+export const query = graphql`
+  query ChapterPage($slug: String) {
+    markdownRemark(frontmatter: {slug: {eq: $slug}}) {
+      html
+      frontmatter {
+        category
+        slug
+        title
+        excerpt
       }
     }
-
-    # this gets us the previous post by id (if it exists)
-    previous: wpPost(id: { eq: $previousPostId }) {
-      uri
-      title
-    }
-
-    # this gets us the next post by id (if it exists)
-    next: wpPost(id: { eq: $nextPostId }) {
-      uri
-      title
-    }
-  }
-`
+  }`

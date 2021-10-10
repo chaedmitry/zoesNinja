@@ -11,26 +11,21 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 const Seo = ({ description, lang, meta, title }) => {
-  const { wp, wpUser } = useStaticQuery(
+  const { site, wpUser } = useStaticQuery(
     graphql`
       query {
-        wp {
-          generalSettings {
+        site {
+          siteMetadata {
             title
             description
           }
-        }
-
-        # if there's more than one user this would need to be filtered to the main user
-        wpUser {
-          twitter: name
         }
       }
     `
   )
 
-  const metaDescription = description || wp.generalSettings?.description
-  const defaultTitle = wp.generalSettings?.title
+  const metaDescription = description || site.siteMetadata?.description
+  const defaultTitle = site.siteMetadata?.title
 
   return (
     <Helmet
@@ -59,10 +54,6 @@ const Seo = ({ description, lang, meta, title }) => {
         {
           name: `twitter:card`,
           content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: wpUser?.twitter || ``,
         },
         {
           name: `twitter:title`,

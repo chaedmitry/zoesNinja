@@ -5,13 +5,13 @@ import Footer from "./footer.js"
 
 const Layout = ({ isHomePage, children }) => {
   const {
-    wp: {
-      generalSettings: { title },
+    site: {
+      siteMetadata: { title },
     },
   } = useStaticQuery(graphql`
     query LayoutQuery {
-      wp {
-        generalSettings {
+      site {
+        siteMetadata {
           title
           description
         }

@@ -14,15 +14,16 @@ module.exports = {
    * If you need any more you can search here: https://www.gatsbyjs.com/plugins/
    */
   plugins: [
-    {
-     /** 
+    'gatsby-transformer-remark',
+    /** {
+     
        * First up is the WordPress source plugin that connects Gatsby
        * to your WordPress site.
        *
        * visit the plugin docs to learn more
        * https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-source-wordpress/README.md
        *
-      */ 
+       
       resolve: `gatsby-source-wordpress`,
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
@@ -30,7 +31,7 @@ module.exports = {
           process.env.WPGRAPHQL_URL ||
           `https://wpgatsbydemo.wpengine.com/graphql`,
       },
-    },
+    },*/
 
     /**
      * We need this plugin so that it adds the "File.publicURL" to our site
@@ -84,4 +85,9 @@ module.exports = {
      */
     // `gatsby-plugin-offline`,
   ],
+  siteMetadata: {
+    contact: `https://forms.gle/4jVrUdu7TSTtFoVy5`,
+    title: `Zoe's Ninja Cancer Journey`,
+    description: `TBD`,
+  }
 }

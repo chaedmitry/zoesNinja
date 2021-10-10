@@ -1,9 +1,18 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import logo from "../../static/logo.png"
 
 
 export default function Header() {
+  const data = useStaticQuery(graphql`
+      query ContactQuery {
+        site {
+          siteMetadata {
+            contact
+          }
+        }
+      }`)
+
   return (
     <header className="header">
       <Link className="blog-name" to="/">
@@ -12,7 +21,7 @@ export default function Header() {
       </Link>
 
       <section className="nav">
-        <a className="button button-normal button-icon" href="https://forms.gle/4jVrUdu7TSTtFoVy5" target="_blank">
+        <a className="button button-normal button-icon" href={data.site.siteMetadata.contact} target="_blank">
           <svg aria-labelledby="contact" width="20" height="26" viewBox="0 0 20 26" fill="none" xmlns="http://www.w3.org/2000/svg">
             <title id="contact">Contact Zoe</title>
             <path className="icon-path" fillRule="evenodd" clipRule="evenodd" d="M1 9C1 8.44772 1.44772 8 2 8H18C18.5523 8 19 8.44772 19 9V19C19 19.5523 18.5523 20 18 20H2C1.44772 20 1 19.5523 1 19V9ZM15 10H5L9.68765 13.7501C9.87026 13.8962 10.1297 13.8962 10.3123 13.7501L15 10ZM3 11L9.38218 16.0146C9.74479 16.2995 10.2552 16.2995 10.6178 16.0146L17 11V18H3V11Z" fill="#489BA8"/>

@@ -4,15 +4,12 @@ import parse from "html-react-parser"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const BlogIndex = ({
-  data,
-  pageContext: { nextPagePath, previousPagePath },
-}) => {
-  const posts = data.allWpPost.nodes
+const BlogIndex = ( {data} ) => {
+  const posts = data.allMarkdownRemark.nodes
 
   if (!posts.length) {
     return (
-      <Layout isHomePage>
+      <Layout>
         <Seo title="Chapters" />
         <p>
           No blog posts found. Add posts to your WordPress site and they'll
@@ -28,10 +25,10 @@ const BlogIndex = ({
       <h1>Chapters</h1>
       <ol className="chapters">
         {posts.map(post => {
-          const title = post.title
+          const title = post.frontmatter.title
 
           return (
-            <li key={post.uri}>
+            <li key={post.slug}>
               <article
                 className="post-list-item"
                 itemScope
@@ -39,25 +36,17 @@ const BlogIndex = ({
               >
                 <header>
                   <h2>
-                    <Link to={post.uri} itemProp="url">
+                    <Link to={"/chapters/"+post.frontmatter.slug} itemProp="url">
                       <span itemProp="headline">{parse(title)}</span>
                     </Link>
                   </h2>
-                  <p className='secondary'>{post.date}</p>
+                  <p className='secondary'>{post.frontmatter.category}</p>
                 </header>
               </article>
             </li>
           )
         })}
       </ol>
-
-      {/*{previousPagePath && (
-        <>
-          <Link className="pagination" to={previousPagePath}>Previous page</Link>
-          <br />
-        </>
-      )}
-      {nextPagePath && <Link className="pagination" to={nextPagePath}>Next page</Link>}*/}
     </Layout>
   )
 }
@@ -65,18 +54,15 @@ const BlogIndex = ({
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query WordPressPostArchive($offset: Int!) {
-    allWpPost(
-      sort: { fields: [date], order: ASC }
-      skip: $offset
-    ) {
+  query WordPressPostArchive {
+    allMarkdownRemark (sort: {fields: frontmatter___title, order: ASC}){
       nodes {
-        excerpt
-        uri
-        date(formatString: "MMMM D, YYYY")
-        title
-        excerpt
+        frontmatter {
+          title
+          slug
+          category
+        }
+        id
       }
     }
-  }
-`
+  }`
