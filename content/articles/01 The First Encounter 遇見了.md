@@ -3,6 +3,8 @@ title: 01 The First Encounter 遇見了
 category: Before the Surgery
 slug: 01-the-first-encounter
 excerpt: It was a Saturday, also Lunar New Year’s Day. Festivities without spending my annual leave allowance, nice.
+nextSlug: 02-out-of-the-blue
+nextTitle: 02 Out Of The Blue? 毫無先兆？
 ---
 
 It was a Saturday, also Lunar New Year’s Day. Festivities without spending my annual leave allowance, nice. Just before bed, it was time to floss and brush my teeth. That evening, I opened my mouth super wide for an extra check on my four wisdom teeth, to validate whether my simplified dental care regime was adequate when earlier that month I travelled light for a holiday, without bringing the electric toothbrush.
@@ -37,7 +39,7 @@ I: “No idea ……  I only inadvertently discovered it last week……”
 
 The endoscopy only took a few minutes. Without having any scans, the surgeon gave a preliminary diagnosis of a rare tumour in the “parapharyngeal space”, and that the commonest treatment option is surgery. The immediate next step was to have an MRI scan to precisely locate the tumour, measure its size and have an idea of tumour type or the originating tissue.
 
-<q>“Sorry, what ‘space’ did you just say? I didn’t quite catch it.”
+<q>Sorry, what ‘space’ did you just say? I didn’t quite catch it.
 
 The surgeon calmly repeated the anatomical term. I jotted it down for my homework that evening.
 

@@ -3,6 +3,7 @@ title: 02 Out Of The Blue? 毫無先兆？
 category: Before the Surgery
 slug: 02-out-of-the-blue
 excerpt: In terms of incidence, comparing to tumours of the lung, colon, breast and prostate, those in the head and neck (H&N) region are rather uncommon. If you ask me to name some H&N cancers, I would think of those of the nasopharynx, thyroid, oesophagus and tongue.
+nextSlug: 03-half-of-my-face
 ---
 
 In terms of incidence, comparing to tumours of the lung, colon, breast and prostate, those in the head and neck (H&N) region are rather uncommon. If you ask me to name some H&N cancers, I would think of those of the nasopharynx, thyroid, oesophagus and tongue. According to some statistics presented by the charity Cancer Research UK, in a given year, of all new cancer diagnoses in the UK, about 3% are in the H&N (12238 cases recorded between 2015 and 2017). Among all H&C cancer sufferers, most are over 50 years old, and 70% are male.

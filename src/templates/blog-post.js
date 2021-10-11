@@ -2,21 +2,12 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
-
-// We're using Gutenberg so we need the block styles
-// these are copied into this project due to a conflict in the postCSS
-// version used by the Gatsby and @wordpress packages that causes build
-// failures.
-// @todo update this once @wordpress upgrades their postcss version
-import "../css/@wordpress/block-library/build-style/style.css"
-import "../css/@wordpress/block-library/build-style/theme.css"
-
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const BlogPostTemplate = ({ data }) => {
   const { html } = data.markdownRemark
-  const { title, category, excerpt } = data.markdownRemark.frontmatter
+  const { title, category, excerpt, nextSlug, nextTitle } = data.markdownRemark.frontmatter
 
   return (
     <Layout>
@@ -42,8 +33,8 @@ const BlogPostTemplate = ({ data }) => {
             </li>*/}
 
           <li>
-            <Link className="button button-normal" to='/' rel="next">
-                Next: → 
+            <Link className="button button-normal" to={`/chapters/`+nextSlug} rel="next">
+                Next: {nextTitle} → 
             </Link>
           </li>
         </ul>
@@ -63,6 +54,8 @@ export const query = graphql`
         slug
         title
         excerpt
+        nextSlug
+        nextTitle
       }
     }
   }`

@@ -3,6 +3,7 @@ title: 03 Half Of My Face 半邊臉
 category: Before the Surgery
 slug: 03-half-of-my-face
 excerpt: The two-week wait wasn’t that agonising. It really wasn’t. Back then, for the vast majority of people in the UK, COVID-19 was still a foreign problem.
+nextSlug: 04-the-tsunami
 ---
 
 The two-week wait wasn’t that agonising. It really wasn’t.

@@ -3,6 +3,7 @@ title: 05 The Ninja 隱者
 category: Before the Surgery
 slug: 05-the-ninja
 excerpt: Family and friends asked whether there’s a name for this kind of tumour. Well, yes. When I was receiving the MRI scan results, my consultant surgeon actually mentioned the term “pleomorphic adenoma” but didn’t dwell on it.
+nextSlug: 06-covid-19-struck
 ---
 
 Family and friends asked whether there’s a name for this kind of tumour.

@@ -1,37 +1,31 @@
 /**
- * 👋 Hey there!
- * This file is the starting point for your new WordPress/Gatsby site! 🚀
  * For more information about what this file is and does, see
  * https://www.gatsbyjs.com/docs/gatsby-config/
- *
- */
+*/
 
 module.exports = {
   /**
-   * Adding plugins to this array adds them to your Gatsby site.
-   *
-   * Gatsby has a rich ecosystem of plugins.
-   * If you need any more you can search here: https://www.gatsbyjs.com/plugins/
+   * More plugins: https://www.gatsbyjs.com/plugins/
    */
   plugins: [
-    'gatsby-transformer-remark',
-    /** {
-     
-       * First up is the WordPress source plugin that connects Gatsby
-       * to your WordPress site.
-       *
-       * visit the plugin docs to learn more
-       * https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-source-wordpress/README.md
-       *
-       
-      resolve: `gatsby-source-wordpress`,
+    /* This plugin is used to fetch the markdown files for pages*/
+    {
+      resolve: `gatsby-source-filesystem`,
       options: {
-        // the only required plugin option for WordPress is the GraphQL url.
-        url:
-          process.env.WPGRAPHQL_URL ||
-          `https://wpgatsbydemo.wpengine.com/graphql`,
+        name: `articles`,
+        path: `${__dirname}/content/articles`,
       },
-    },*/
+    },
+    
+    /* This plugin is used to transform markdown files to HTML */
+    'gatsby-transformer-remark',
+
+    /**
+     * The following two plugins are required if you want to use Gatsby image
+     * See https://www.gatsbyjs.com/docs/gatsby-image/#setting-up-gatsby-image
+     */
+     `gatsby-transformer-sharp`,
+     `gatsby-plugin-sharp`,
 
     /**
      * We need this plugin so that it adds the "File.publicURL" to our site
@@ -46,44 +40,23 @@ module.exports = {
         path: `${__dirname}/content/assets`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `articles`,
-        path: `${__dirname}/content/articles`,
-      },
-    },
 
-    /**
-     * The following two plugins are required if you want to use Gatsby image
-     * See https://www.gatsbyjs.com/docs/gatsby-image/#setting-up-gatsby-image
-     * if you're curious about it.
-     */
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    // See https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet/?=gatsby-plugin-react-helmet
+    `gatsby-plugin-react-helmet`,
 
     {
       // See https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/?=gatsby-plugin-manifest
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter WordPress Blog`,
-        short_name: `GatsbyJS & WP`,
+        name: `Zoe's Ninja Cancer Journey`,
+        short_name: `Zoe's Ninja`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#D1E3E6`, //color of the browser header
         display: `minimal-ui`,
         icon: `content/assets/gatsby-icon.png`,
       },
     },
-
-    // See https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet/?=gatsby-plugin-react-helmet
-    `gatsby-plugin-react-helmet`,
-
-    /**
-     * this (optional) plugin enables Progressive Web App + Offline functionality
-     * To learn more, visit: https://gatsby.dev/offline
-     */
-    // `gatsby-plugin-offline`,
   ],
   siteMetadata: {
     contact: `https://forms.gle/4jVrUdu7TSTtFoVy5`,

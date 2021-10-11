@@ -3,6 +3,7 @@ title: 04 The Tsunami 海嘯
 category: Before the Surgery
 slug: 04-the-tsunami
 excerpt: It was a chilly evening as I left the outpatients department.Perplexed? No, the treatment plan, risks, pros and cons were all clear.
+nextSlug: 05-the-ninja
 ---
 
 It was a chilly evening as I left the outpatients department.
