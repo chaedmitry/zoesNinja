@@ -12,8 +12,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `articles`,
-        path: `${__dirname}/content/articles`,
+        name: `chapters`,
+        path: `${__dirname}/content/chapters`,
       },
     },
     
@@ -43,6 +43,20 @@ module.exports = {
 
     // See https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet/?=gatsby-plugin-react-helmet
     `gatsby-plugin-react-helmet`,
+
+    {
+      resolve: 'gatsby-plugin-i18n',
+      options: {        
+        langKeyDefault: 'en',
+        langKeyForNull: '',
+        prefixDefault: false,
+        useLangKeyLayout: false,
+        pagesPaths: [
+          'src/pages/index',
+          'content/'
+        ],
+      }
+    },
 
     {
       // See https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/?=gatsby-plugin-manifest

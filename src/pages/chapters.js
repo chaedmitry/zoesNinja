@@ -1,6 +1,5 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import parse from "html-react-parser"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
@@ -36,8 +35,8 @@ const BlogIndex = ( {data} ) => {
               >
                 <header>
                   <h2>
-                    <Link to={"/chapters/"+post.frontmatter.slug} itemProp="url">
-                      <span itemProp="headline">{parse(title)}</span>
+                    <Link to={post.fields.slug} itemProp="url">
+                      <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
                   <p className='secondary'>{post.frontmatter.category}</p>
@@ -54,9 +53,12 @@ const BlogIndex = ( {data} ) => {
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query WordPressPostArchive {
+  query QueryChapters {
     allMarkdownRemark (sort: {fields: frontmatter___title, order: ASC}){
       nodes {
+        fields {
+          slug
+        }
         frontmatter {
           title
           slug

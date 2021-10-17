@@ -33,7 +33,7 @@ const BlogPostTemplate = ({ data }) => {
             </li>*/}
 
           <li>
-            <Link className="button button-normal" to={`/chapters/`+nextSlug} rel="next">
+            <Link className="button button-normal" to={nextSlug} rel="next">
                 Next: {nextTitle} → 
             </Link>
           </li>
@@ -47,11 +47,14 @@ export default BlogPostTemplate
 
 export const query = graphql`
   query ChapterPage($slug: String) {
-    markdownRemark(frontmatter: {slug: {eq: $slug}}) {
+    markdownRemark(fields: {slug: {eq: $slug}}) {
+      fields {
+        langKey
+        slug
+      }
       html
       frontmatter {
         category
-        slug
         title
         excerpt
         nextSlug
