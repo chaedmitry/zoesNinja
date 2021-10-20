@@ -8,6 +8,10 @@ import { injectIntl, Link } from "gatsby-plugin-react-intl"
 const BlogIndex = ( {data, intl} ) => {
   const posts = data.allMarkdownRemark.nodes
   const locale = intl.locale !== "en" ? `/${intl.locale}` : ""
+  const filteredPosts = posts.filter((post) =>
+    post.frontmatter.lang.includes(intl.locale)
+  )
+
   if (!posts.length) {
     return (
       <Layout>
@@ -24,7 +28,7 @@ const BlogIndex = ( {data, intl} ) => {
       <Seo title={intl.formatMessage({id: "seo-chapters-title" })} />
       <h1>{intl.formatMessage({id: "chapters-title" })}</h1>
       <ol className="chapters">
-        {posts.map(post => {
+        {filteredPosts.map(post => {
           const title = post.frontmatter.title
 
           return (
@@ -36,7 +40,7 @@ const BlogIndex = ( {data, intl} ) => {
               >
                 <header>
                   <h2>
-                    <Link to={"/chapters/"+post.frontmatter.slug} itemProp="url">
+                    <Link to={post.frontmatter.slug} itemProp="url">
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>

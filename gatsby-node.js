@@ -13,10 +13,10 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     }`)
-
-    data.allMarkdownRemark.nodes.forEach(node => {
+      
+    data.allMarkdownRemark.nodes.forEach(node => {  
       actions.createPage({
-        path: `/chapters/${node.frontmatter.slug}`,
+        path: node.frontmatter.slug,
         component: path.resolve('./src/templates/blog-post.js'),
         context: {
           slug: node.frontmatter.slug,

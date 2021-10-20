@@ -19,7 +19,10 @@ module.exports = {
         // option for use / as defaultLangauge root path. if your defaultLanguage is `ko`, when `redirectDefaultLanguageToRoot` is true, then it will not generate `/ko/xxx` pages, instead of `/xxx`
         redirectDefaultLanguageToRoot: true,
         // paths that you don't want to genereate locale pages, example: ["/dashboard/","/test/**"], string format is from micromatch https://github.com/micromatch/micromatch
-        ignoredPaths: [],
+        ignoredPaths: [
+          `${__dirname}/src/pages/chapters`,
+          `${__dirname}/src/templates/blog-post.js`
+        ],
         // option to fallback to the defined language instead of the `defaultLanguage` if the user langauge is not in the list
         fallbackLanguage: `en`,
       },
@@ -30,7 +33,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `chapters`,
-        path: `${__dirname}/content/chapters`,
+        path: `${__dirname}/src/pages/chapters`,
       },
     },
     

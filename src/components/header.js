@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import logo from "../../static/logo.png"
 import { injectIntl, Link } from "gatsby-plugin-react-intl"
+import LanguageSelector from "./langSelector.js"
 
 const Header = ({ intl }) => {
   const data = useStaticQuery(graphql`
@@ -21,6 +22,7 @@ const Header = ({ intl }) => {
       </Link>
 
       <section className="nav">
+        <LanguageSelector />
         <a className="button button-normal button-icon" href={data.site.siteMetadata.contact} target="_blank" rel="noreferrer">
           <svg aria-labelledby="contact" width="20" height="26" viewBox="0 0 20 26" fill="none" xmlns="http://www.w3.org/2000/svg">
             <title id="contact">{intl.formatMessage({id: "header-contact" })}</title>

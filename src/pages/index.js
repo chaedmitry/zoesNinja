@@ -4,7 +4,7 @@ import Seo from "../components/seo"
 import girl from "../../static/girl.jpeg"
 import { injectIntl, Link } from "gatsby-plugin-react-intl"
 
-const Home = ({ intl }) => {
+const Home = ({ intl, pageContext }) => {
   const locale = intl.locale !== "en" ? `/${intl.locale}` : ""
   return (
       <Layout isHomePage>
@@ -14,7 +14,7 @@ const Home = ({ intl }) => {
         <p>{intl.formatMessage({id: "homepage-p1" })}</p>
         <p>{intl.formatMessage({id: "homepage-p2" })}</p>
         <p>{intl.formatMessage({id: "homepage-p3" })}</p>
-        <Link className="button button-accent" to="/chapters/01-the-first-encounter">{intl.formatMessage({id: "button-start" })}</Link>
+        <Link className="button button-accent" to={`/chapters/01-the-first-encounter-${intl.locale}`}>{intl.formatMessage({id: "button-start" })}</Link>
       </Layout>
   )
 }
