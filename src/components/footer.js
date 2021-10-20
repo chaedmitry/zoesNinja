@@ -1,9 +1,12 @@
 import React from "react"
+import { injectIntl } from "gatsby-plugin-react-intl"
 
-export default function Footer() {
+const Footer = ({ intl }) => {
   return (
     <footer>
-        © {new Date().getFullYear()}. From Zoe with ❤️
+        © {new Date().getFullYear()}{intl.formatMessage({id: "footer-title" })}
     </footer>
   )
 }
+
+export default injectIntl(Footer)

@@ -1,19 +1,19 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import parse from "html-react-parser"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { injectIntl, Link } from "gatsby-plugin-react-intl"
 
-const BlogIndex = ( {data} ) => {
+const BlogIndex = ( {data, intl} ) => {
   const posts = data.allMarkdownRemark.nodes
-
+  const locale = intl.locale !== "en" ? `/${intl.locale}` : ""
   if (!posts.length) {
     return (
       <Layout>
-        <Seo title="Chapters" />
+        <Seo title={intl.formatMessage({id: "seo-chapters-title" })} />
         <p>
-          No blog posts found. Add posts to your WordPress site and they'll
-          appear here!
+        {intl.formatMessage({id: "chapters-message" })}
         </p>
       </Layout>
     )
@@ -21,8 +21,8 @@ const BlogIndex = ( {data} ) => {
 
   return (
     <Layout isHomePage>
-      <Seo title="Chapters" />
-      <h1>Chapters</h1>
+      <Seo title={intl.formatMessage({id: "seo-chapters-title" })} />
+      <h1>{intl.formatMessage({id: "chapters-title" })}</h1>
       <ol className="chapters">
         {posts.map(post => {
           const title = post.frontmatter.title
@@ -37,7 +37,7 @@ const BlogIndex = ( {data} ) => {
                 <header>
                   <h2>
                     <Link to={"/chapters/"+post.frontmatter.slug} itemProp="url">
-                      <span itemProp="headline">{parse(title)}</span>
+                      <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
                   <p className='secondary'>{post.frontmatter.category}</p>
@@ -51,16 +51,17 @@ const BlogIndex = ( {data} ) => {
   )
 }
 
-export default BlogIndex
+export default injectIntl(BlogIndex)
 
 export const pageQuery = graphql`
-  query WordPressPostArchive {
+  query ListAllChapters {
     allMarkdownRemark (sort: {fields: frontmatter___title, order: ASC}){
       nodes {
         frontmatter {
           title
           slug
           category
+          lang
         }
         id
       }
