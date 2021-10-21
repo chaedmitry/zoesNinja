@@ -1,20 +1,17 @@
 import React from "react"
 import { Link } from "gatsby"
+import { injectIntl } from "gatsby-plugin-react-intl"
 
-const LanguageSelector = () => {
+const LanguageSelector = ({ intl }) => {
     
-    return (
-    <div>
-      <ul className="lang-selector">
-        <li>
-          <Link to="/">En</Link>
-        </li>
-        <li>
-          <Link to="/zh">Zh</Link>
-        </li>
-      </ul>
-    </div>
-  )
+    if (intl.locale === "en") {
+      return (
+        <Link className="button button-normal button-icon lang-selector" to="/zh">🇨🇳</Link>
+      )}
+    else {
+      return (
+        <Link className="button button-normal button-icon lang-selector" to="/">🇬🇧</Link>
+      )}
 }
 
-export default LanguageSelector
+export default injectIntl(LanguageSelector)

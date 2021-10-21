@@ -182,7 +182,7 @@ body {
 }
 
 .blog-logo {
-  width: 89px;
+  width: 78px;
   height: auto;
 }
 
@@ -443,6 +443,7 @@ a {
 
 .icon-chapters {
   margin-right: var(--spacing-2);
+  display: none;
 }
 
 .content {
@@ -556,5 +557,9 @@ a {
 
   .chapters {
     padding: var(--spacing-2) var(--spacing-8) var(--spacing-10) var(--spacing-8);
+  }
+
+  .icon-chapters {
+    display: flex;
   }
 }
