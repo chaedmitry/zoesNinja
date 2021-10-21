@@ -19,10 +19,7 @@ module.exports = {
         // option for use / as defaultLangauge root path. if your defaultLanguage is `ko`, when `redirectDefaultLanguageToRoot` is true, then it will not generate `/ko/xxx` pages, instead of `/xxx`
         redirectDefaultLanguageToRoot: true,
         // paths that you don't want to genereate locale pages, example: ["/dashboard/","/test/**"], string format is from micromatch https://github.com/micromatch/micromatch
-        ignoredPaths: [
-          `${__dirname}/src/pages/chapters`,
-          `${__dirname}/src/templates/blog-post.js`
-        ],
+        ignoredPaths: [],
         // option to fallback to the defined language instead of the `defaultLanguage` if the user langauge is not in the list
         fallbackLanguage: `en`,
       },
