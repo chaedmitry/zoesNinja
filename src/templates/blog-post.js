@@ -46,11 +46,7 @@ export default injectIntl(BlogPostTemplate)
 
 export const query = graphql`
   query ChapterPage($slug: String) {
-    markdownRemark(fields: {slug: {eq: $slug}}) {
-      fields {
-        langKey
-        slug
-      }
+    markdownRemark(frontmatter: {slug: {eq: $slug}}) {
       html
       frontmatter {
         category
