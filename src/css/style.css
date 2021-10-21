@@ -263,6 +263,11 @@ small {
   color: var(--color-pale);
 }
 
+.lang-selector {
+  list-style: none;
+  display: flex;
+}
+
 ul,
 ol {
   margin-left: var(--spacing-0);

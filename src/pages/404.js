@@ -2,20 +2,22 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { injectIntl } from "gatsby-plugin-react-intl"
 
-const NotFoundPage = ({ data, location }) => {
+const NotFoundPage = ({ data, location, intl }) => {
   const siteTitle = data.site.siteMetadata.title
+  const locale = intl.locale !== "en" ? `/${intl.locale}` : ""
 
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title="404: Not Found" />
-      <h1>It seems you got lost :(</h1>
-      <p>This page does not exist. Use the navigation above to find the page you need.</p>
+      <h1>{intl.formatMessage({id: "404-title" })}</h1>
+      <p>{intl.formatMessage({id: "404-message" })}</p>
     </Layout>
   )
 }
 
-export default NotFoundPage
+export default injectIntl(NotFoundPage)
 
 export const pageQuery = graphql`
   query {

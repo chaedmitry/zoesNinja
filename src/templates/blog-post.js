@@ -1,14 +1,13 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Image from "gatsby-image"
-import parse from "html-react-parser"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { injectIntl, Link } from "gatsby-plugin-react-intl"
 
-const BlogPostTemplate = ({ data }) => {
+const BlogPostTemplate = ({ data, intl }) => {
   const { html } = data.markdownRemark
-  const { title, category, excerpt, nextSlug, nextTitle } = data.markdownRemark.frontmatter
-
+  const { title, category, excerpt, nextSlug, nextTitle, lang } = data.markdownRemark.frontmatter
   return (
     <Layout>
       <Seo title={title} description={excerpt} />
@@ -43,7 +42,7 @@ const BlogPostTemplate = ({ data }) => {
   )
 }
 
-export default BlogPostTemplate
+export default injectIntl(BlogPostTemplate)
 
 export const query = graphql`
   query ChapterPage($slug: String) {
@@ -59,6 +58,7 @@ export const query = graphql`
         excerpt
         nextSlug
         nextTitle
+        lang
       }
     }
   }`

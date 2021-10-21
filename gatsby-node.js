@@ -3,24 +3,24 @@ const path = require('path')
 exports.createPages = async ({ graphql, actions }) => { 
 
   const { data } = await graphql(`
-    query GetChapters {
+    query Articles {
       allMarkdownRemark {
-        edges {
-          node {
-            fields {
-              langKey
-              slug
-            }
+        nodes {
+          frontmatter {
+            slug
+            lang
           }
         }
       }
     }`)
-
-    data.allMarkdownRemark.edges.forEach(edge => {
+      
+    data.allMarkdownRemark.nodes.forEach(node => {  
       actions.createPage({
-        path: edge.node.fields.slug,
+        path: node.frontmatter.slug,
         component: path.resolve('./src/templates/blog-post.js'),
-        context: { slug: edge.node.fields.slug }
+        context: {
+          slug: node.frontmatter.slug,
+        }
       })
     })
   }
