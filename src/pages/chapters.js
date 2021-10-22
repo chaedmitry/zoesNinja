@@ -1,13 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
-import parse from "html-react-parser"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { injectIntl, Link } from "gatsby-plugin-react-intl"
 
 const BlogIndex = ( {data, intl} ) => {
   const posts = data.allMarkdownRemark.nodes
-  const locale = intl.locale !== "en" ? `/${intl.locale}` : ""
   const filteredPosts = posts.filter((post) =>
     post.frontmatter.lang.includes(intl.locale)
   )

@@ -6,7 +6,6 @@ import { injectIntl } from "gatsby-plugin-react-intl"
 
 const NotFoundPage = ({ data, location, intl }) => {
   const siteTitle = data.site.siteMetadata.title
-  const locale = intl.locale !== "en" ? `/${intl.locale}` : ""
 
   return (
     <Layout location={location} title={siteTitle}>

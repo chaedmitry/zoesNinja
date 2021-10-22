@@ -5,9 +5,7 @@ import Footer from "./footer.js"
 
 const Layout = ({ isHomePage, children }) => {
   const {
-    site: {
-      siteMetadata: { title },
-    },
+    site: {siteMetadata: { title },},
   } = useStaticQuery(graphql`
     query LayoutQuery {
       site {

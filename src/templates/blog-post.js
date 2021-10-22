@@ -7,7 +7,7 @@ import { injectIntl, Link } from "gatsby-plugin-react-intl"
 
 const BlogPostTemplate = ({ data, intl }) => {
   const { html } = data.markdownRemark
-  const { title, category, excerpt, nextSlug, nextTitle, lang } = data.markdownRemark.frontmatter
+  const { title, category, excerpt, nextSlug, nextTitle } = data.markdownRemark.frontmatter
   return (
     <Layout>
       <Seo title={title} description={excerpt} />
@@ -54,7 +54,6 @@ export const query = graphql`
         excerpt
         nextSlug
         nextTitle
-        lang
       }
     }
   }`

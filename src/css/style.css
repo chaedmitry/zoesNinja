@@ -374,7 +374,7 @@ a {
   border-radius: var(--spacing-8);
   justify-content: center;
   align-items: center;
-  height: var(--spacing-10);
+  height: 2.5rem;
 }
 
 .button-normal {
@@ -430,20 +430,8 @@ a {
 }.button-icon svg {
   min-width: 20px;
 }
-
-
-
   .blog-name:visited, .pagination:visited {
   color: var(--color-primary-dark);
-}
-
-.icon-chapters:active {
-  color: var(--color-background-light);
-}
-
-.icon-chapters {
-  margin-right: var(--spacing-2);
-  display: none;
 }
 
 .content {
@@ -509,6 +497,10 @@ a {
 
 .blog-post header p {
   font-size: var(--fontSize-accent);
+}
+
+.flag {
+  height: 20px;
 }
 
 .blog-post-nav {
