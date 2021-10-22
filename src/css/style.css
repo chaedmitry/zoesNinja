@@ -114,6 +114,7 @@
   --color-primary-dark: hsla(188, 40%, 32%, 1);
   --color-secondary: hsla(6, 91%, 76%, 1);
   --color-outline: hsla(188, 30%, 88%, 1);
+  --color-outline-dark: hsla(188, 40%, 72%, 1);
   --color-background: hsla(188, 30%, 90%, 1);
   --color-background-lightest: hsla(188, 30%, 98%, 1);
   --color-background-light: hsla(188, 30%, 96%, 1);
@@ -387,8 +388,11 @@ a {
     background-color: var(--color-background-light);
     color: var(--color-primary-dark);
   }
-  .button-normal:active .icon-path {
-    fill: var(--color-background-lightest);
+  .button-normal:active .icon-envelope-top {
+    fill: var(--color-outline-dark);
+  }
+  .button-normal:active .icon-envelope-bottom {
+    fill: var(--color-background-vivid);
   }
   .button-normal:active {
     background-color: var(--color-primary);
@@ -406,9 +410,6 @@ a {
   color: var(--color-background-lightest);
   background-color: var(--color-primary);
 }
-  .button-accent .icon-path {
-    fill: var(--color-background-lightest);
-  }
   .button-accent:hover {
     background-color: var(--color-primary-dark);
     color: var(--color-background-lightest);
