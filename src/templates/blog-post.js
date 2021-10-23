@@ -8,12 +8,13 @@ import { injectIntl, Link } from "gatsby-plugin-react-intl"
 const BlogPostTemplate = ({ data, intl }) => {
   const { html } = data.markdownRemark
   const { title, category, excerpt, nextSlug, nextTitle } = data.markdownRemark.frontmatter
+  const { timeToRead } = data.markdownRemark
   return (
     <Layout>
       <Seo title={title} description={excerpt} />
 
       <article className="blog-post" itemScope itemType="http://schema.org/Article">
-        <p className="secondary category">{category}</p>
+        <p className="secondary category">{category} · {timeToRead} min read</p>
         <header>
           <h1 itemProp="headline">{title}</h1>
         </header>
@@ -22,21 +23,7 @@ const BlogPostTemplate = ({ data, intl }) => {
       {/*pagination*/}
       
       <nav className="blog-post-nav">
-        <ul>
-          {/*<li>
-            {previous && (
-              <Link className="button button-normal" to={previous.uri} rel="prev">
-                ← Previous
-              </Link>
-            )}
-            </li>*/}
-
-          <li>
-            <Link className="button button-normal" to={nextSlug} rel="next">
-                Next: {nextTitle} → 
-            </Link>
-          </li>
-        </ul>
+        <p><strong>Next chapter:</strong> <Link to={nextSlug} rel="next"> {nextTitle}</Link></p>
       </nav>
     </Layout>
   )
@@ -55,5 +42,6 @@ export const query = graphql`
         nextSlug
         nextTitle
       }
+      timeToRead
     }
   }`
