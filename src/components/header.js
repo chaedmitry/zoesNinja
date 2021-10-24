@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import logo from "../../static/logo.png"
+import logo from "../../static/logo-new.png"
 import { injectIntl, Link } from "gatsby-plugin-react-intl"
 import LanguageSelector from "./langSelector.js"
 

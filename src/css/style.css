@@ -183,7 +183,7 @@ body {
 }
 
 .blog-logo {
-  width: 78px;
+  width: 64px;
   height: auto;
 }
 
@@ -329,7 +329,9 @@ blockquote > ol {
 
 .author-illustration {
   width: 100%;
-  margin-bottom: var(--spacing-5);
+  max-width: 640px;
+  margin: 0 auto var(--spacing-1) auto;
+  display: block;
 }
 
 table {
@@ -543,10 +545,11 @@ a {
     display: flex;
     align-self: center;
     font-weight: 400;
+    margin-left: var(--spacing-2);
   }
 
   .blog-logo {
-    width: 96px;
+    width: 80px;
   }
 
   .chapters {

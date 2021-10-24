@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import girl from "../../static/girl.jpeg"
+import girl from "../../static/zoe.png"
 import { injectIntl, Link } from "gatsby-plugin-react-intl"
 
 const Home = ({ intl, pageContext }) => {
