@@ -304,6 +304,7 @@ q {
   border-radius: var(--spacing-7) var(--spacing-7) var(--spacing-7) var(--spacing-1);
   box-shadow: 4px 4px 24px hsla(188,80%,86%,1);
   border: 2px solid hsla(188,70%,86%,1);
+  quotes: none;
 }
 
 blockquote {
