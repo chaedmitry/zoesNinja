@@ -25,7 +25,7 @@ module.exports = {
       },
     },
     
-    /* This plugin is used to fetch the markdown files for pages*/
+    /* Fetch the markdown files for pages*/
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -33,9 +33,14 @@ module.exports = {
         path: `${__dirname}/src/pages/chapters`,
       },
     },
-    
-    /* This plugin is used to transform markdown files to HTML */
-    'gatsby-transformer-remark',
+    /* Fetch md images*/
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `chapters`,
+        path: `${__dirname}/src/pages/chapters/images`,
+      },
+    },
 
     /**
      * The following two plugins are required if you want to use Gatsby image
@@ -43,6 +48,21 @@ module.exports = {
      */
      `gatsby-transformer-sharp`,
      `gatsby-plugin-sharp`,
+    
+    /* This plugin is used to transform markdown files to HTML */
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+            },
+          },
+        ],
+      },
+    },
 
     /**
      * We need this plugin so that it adds the "File.publicURL" to our site
