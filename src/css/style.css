@@ -300,10 +300,9 @@ q {
   line-height: var(--spacing-7);
   padding: var(--spacing-6) var(--spacing-8) var(--spacing-8) var(--spacing-8);
   margin: var(--spacing-10) auto;
-  background: radial-gradient(hsla(188,80%,92%,1), hsla(188,80%,86%,1));
+  background: radial-gradient(hsla(188,50%,88%,1), hsla(188,50%,84%,1));
   border-radius: var(--spacing-7) var(--spacing-7) var(--spacing-7) var(--spacing-1);
-  box-shadow: 4px 4px 24px hsla(188,80%,86%,1);
-  border: 2px solid hsla(188,70%,86%,1);
+  box-shadow: 4px 4px 24px hsla(188,40%,88%,1);
   quotes: none;
 }
 
@@ -314,9 +313,9 @@ blockquote {
   font-style: italic;
   line-height: var(--spacing-7);
   text-align: center;
-  padding: var(--spacing-10) var(--spacing-6) var(--spacing-16) var(--spacing-6);
+  padding: var(--spacing-10) var(--spacing-6) var(--spacing-12) var(--spacing-6);
   margin: 0;
-  background: radial-gradient(var(--color-secondary), var(--color-background-light-5) 65%);
+  background: radial-gradient(var(--color-secondary), var(--color-background-light-5) 60%);
 }
 
 blockquote > :last-child {
@@ -380,6 +379,10 @@ a {
   justify-content: center;
   align-items: center;
   height: 2.5rem;
+}
+
+.start {
+  display: inline-block;
 }
 
 .button-normal {
