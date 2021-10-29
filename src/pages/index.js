@@ -13,7 +13,7 @@ const Home = ({ intl, pageContext }) => {
         <p>{intl.formatMessage({id: "homepage-p1" })}</p>
         <p>{intl.formatMessage({id: "homepage-p2" })}</p>
         <p>{intl.formatMessage({id: "homepage-p3" })}</p>
-        <Link className="button button-accent" to={`/chapters/01-the-first-encounter-${intl.locale}`}>{intl.formatMessage({id: "button-start" })}</Link>
+        <Link className="button button-accent start" to={`/chapters/01-the-first-encounter-${intl.locale}`}>{intl.formatMessage({id: "button-start" })}</Link>
       </Layout>
   )
 }

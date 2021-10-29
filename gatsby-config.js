@@ -97,7 +97,7 @@ module.exports = {
   ],
   siteMetadata: {
     contact: `https://forms.gle/4jVrUdu7TSTtFoVy5`,
-    title: `Zoe's Ninja Cancer Journey`,
+    title: `Zoe's Ninja`,
     description: `TBD`,
   }
 }
