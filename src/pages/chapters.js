@@ -42,7 +42,7 @@ const BlogIndex = ( {data, intl} ) => {
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
-                  <p className='secondary'>{post.frontmatter.category} · {post.timeToRead} min read</p>
+                  <p className='secondary'>{post.frontmatter.category} · {post.timeToRead}&nbsp;min</p>
                 </header>
               </article>
             </li>
