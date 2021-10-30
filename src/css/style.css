@@ -179,11 +179,14 @@ body {
 }
 
 .blog-title {
-  display: none;
+  display: flex;
+  align-self: center;
+  font-weight: 400;
+  margin-left: var(--spacing-2);
 }
 
 .blog-logo {
-  width: 64px;
+  width: 56px;
   height: auto;
 }
 
@@ -395,10 +398,10 @@ a {
     background-color: var(--color-background-light);
     color: var(--color-primary-dark);
   }
-  .button-normal:active .icon-envelope-top {
+  .button-normal:active .icon-color-dark {
     fill: var(--color-outline-dark);
   }
-  .button-normal:active .icon-envelope-bottom {
+  .button-normal:active .icon-color-light {
     fill: var(--color-background-vivid);
   }
   .button-normal:active {
@@ -442,6 +445,10 @@ a {
   color: var(--color-primary-dark);
 }
 
+.chapters-label {
+  display: none;
+}
+
 .content {
   margin: var(--spacing-0) auto;
   max-width: var(--maxWidth-wrapper);
@@ -471,7 +478,7 @@ a {
   margin: 0;
 }
 
-.chapters {
+.chapters-list {
   list-style: none;
   background-color: var(--color-background-lightest);
   border-radius: var(--spacing-4);
@@ -556,11 +563,17 @@ a {
     width: 80px;
   }
 
-  .chapters {
+  .chapters-list {
     padding: var(--spacing-2) var(--spacing-8) var(--spacing-10) var(--spacing-8);
   }
+}
 
-  .icon-chapters {
+@media (min-width: 400px) {
+  .chapters-label {
     display: flex;
+  }
+
+  .chapters-icon {
+    display: none;
   }
 }
