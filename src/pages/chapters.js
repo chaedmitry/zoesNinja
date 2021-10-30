@@ -25,7 +25,7 @@ const BlogIndex = ( {data, intl} ) => {
     <Layout isHomePage>
       <Seo title={intl.formatMessage({id: "seo-chapters-title" })} />
       <h1>{intl.formatMessage({id: "chapters-title" })}</h1>
-      <ol className="chapters">
+      <ol className="chapters-list">
         {filteredPosts.map(post => {
           const title = post.frontmatter.title
 
