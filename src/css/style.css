@@ -239,10 +239,6 @@ h2 > a {
   text-decoration: none;
 }
 
-h1 .cn {
-  font-weight: 500;
-}
-
 /* Prose */
 
 p {
@@ -255,6 +251,10 @@ p {
 .cn {
   font-family: 'Noto Serif TC', serif;
   font-weight: 500;
+}
+
+blockquote.cn {
+  font-style: normal;
 }
 
 .latin {
