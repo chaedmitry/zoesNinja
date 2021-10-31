@@ -14,7 +14,7 @@ const BlogPostTemplate = ({ data, intl }) => {
       <Seo title={title} description={excerpt} />
 
       <article className="blog-post" itemScope itemType="http://schema.org/Article">
-        <p className="secondary category">{category} · {timeToRead} min read</p>
+        <p className="secondary category">{category}</p>
         <header>
           <h1 itemProp="headline">{title}</h1>
         </header>
@@ -23,7 +23,7 @@ const BlogPostTemplate = ({ data, intl }) => {
       {/*pagination*/}
       
       <nav className="blog-post-nav">
-        <p><strong>Next chapter:</strong> <Link to={nextSlug} rel="next"> {nextTitle}</Link></p>
+        <p>Next chapter — <Link to={nextSlug} rel="next"> {nextTitle}</Link></p>
       </nav>
     </Layout>
   )
@@ -42,6 +42,5 @@ export const query = graphql`
         nextSlug
         nextTitle
       }
-      timeToRead
     }
   }`
