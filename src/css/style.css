@@ -531,10 +531,6 @@ a {
   margin-right: var(--spacing-2);
 }
 
-.gatsby-highlight {
-  margin-bottom: var(--spacing-8);
-}
-
 /* Media queries */
 
 @media (min-width: 768px) {
@@ -544,10 +540,10 @@ a {
     --lineHeight-heading: 3rem;
   }
 
-  /*.header {
+  .header {
     position: sticky;
     top: 0;
-  }*/
+  }
 
   .blog-title {
     font-weight: 400;
@@ -565,8 +561,8 @@ a {
   }
   
   .author-illustration {
-    margin-top: -4rem;
-    width: 90%;
+    margin-top: calc(-1 * var(--spacing-12));
+    width: 80%;
   }
 }
 
