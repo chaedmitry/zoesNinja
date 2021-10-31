@@ -214,7 +214,7 @@ hr {
 h1,
 h2 {
   margin-top: var(--spacing-0);
-  margin-bottom: var(--spacing-6);
+  margin-bottom: var(--spacing-4);
   color: var(--color-heading);
 }
 
@@ -331,9 +331,10 @@ blockquote > ol {
 }
 
 .author-illustration {
-  width: 100%;
-  max-width: 640px;
-  margin: 0 auto var(--spacing-1) auto;
+  width: 125%;
+  margin-left: 50%;
+  margin-top: -1rem;
+  transform: translateX(-50%);
   display: block;
 }
 
@@ -565,6 +566,11 @@ a {
 
   .chapters-list {
     padding: var(--spacing-2) var(--spacing-8) var(--spacing-10) var(--spacing-8);
+  }
+  
+  .author-illustration {
+    margin-top: -4.5rem;
+    width: 100%;
   }
 }
 
