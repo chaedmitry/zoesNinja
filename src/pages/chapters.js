@@ -42,7 +42,7 @@ const BlogIndex = ( {data, intl} ) => {
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
-                  <p className='secondary'>{post.frontmatter.category} · {post.timeToRead}&nbsp;min</p>
+                  <p className='secondary'>{post.frontmatter.category}</p>
                 </header>
               </article>
             </li>
@@ -67,7 +67,6 @@ export const pageQuery = graphql`
           excerpt
         }
         id
-        timeToRead
       }
     }
   }`
