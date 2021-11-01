@@ -130,6 +130,11 @@
   box-sizing: border-box;
 }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 html {
   font-size: var(--fontSize-root);
   -webkit-font-smoothing: antialiased;
@@ -183,11 +188,13 @@ body {
 
 .blog-logo {
   width: 56px;
-  height: auto;
+  height: 56px;
 }
 
 footer {
-  padding: var(--spacing-8) var(--spacing-0);
+  padding: var(--spacing-8) var(--spacing-0) var(--spacing-0) var(--spacing-0);
+  display: flex;
+  justify-content: space-between;
 }
 
 hr {
@@ -326,7 +333,7 @@ blockquote > ol {
 }
 
 .author-illustration {
-  width: 125%;
+  width: 130%;
   margin-left: 50%;
   margin-top: -1rem;
   transform: translateX(-50%);
@@ -554,6 +561,7 @@ a {
 
   .blog-logo {
     width: 80px;
+    height: 80px;
   }
 
   .chapters-list {
@@ -562,7 +570,13 @@ a {
   
   .author-illustration {
     margin-top: calc(-1 * var(--spacing-12));
-    width: 80%;
+    width: 82%;
+    height: 100%;
+  }
+
+  html, body {
+    max-width: none;
+    overflow-x: visible;
   }
 }
 
