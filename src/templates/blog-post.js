@@ -1,9 +1,9 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { injectIntl } from "gatsby-plugin-react-intl"
+import { injectIntl, Link } from "gatsby-plugin-react-intl"
 
 const BlogPostTemplate = ({ data, intl }) => {
   const { html } = data.markdownRemark
