@@ -8,7 +8,6 @@ import { injectIntl, Link } from "gatsby-plugin-react-intl"
 const BlogPostTemplate = ({ data, intl }) => {
   const { html } = data.markdownRemark
   const { title, category, excerpt, nextSlug, nextTitle } = data.markdownRemark.frontmatter
-  const { timeToRead } = data.markdownRemark
   return (
     <Layout>
       <Seo title={title} description={excerpt} />
@@ -23,7 +22,7 @@ const BlogPostTemplate = ({ data, intl }) => {
       {/*pagination*/}
       
       <nav className="blog-post-nav">
-        <p>Next chapter — <Link to={nextSlug} rel="next"> {nextTitle}</Link></p>
+      <p>{intl.formatMessage({id: "next-chapter" })} — <Link to={nextSlug} rel="next"> {nextTitle}</Link></p>
       </nav>
     </Layout>
   )
