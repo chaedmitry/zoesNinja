@@ -4,7 +4,7 @@ import { injectIntl } from "gatsby-plugin-react-intl"
 const Footer = ({ intl }) => {
   return (
     <footer>
-        © {new Date().getFullYear()}{intl.formatMessage({id: "footer-title" })}
+        <p>© {new Date().getFullYear()}{intl.formatMessage({id: "footer-title" })}</p>
     </footer>
   )
 }
