@@ -3,9 +3,7 @@ lang: zh
 title: Test Chinese symbols
 category: Before the Surgery
 slug: /chapters/test-chinese-symbols
-excerpt: none
-nextSlug: 
-nextTitle: 
+
 ---
 <p class="cn">Fontface in chapter text: 說説
 <p>Fontface in technical pages and nav: 說説
@@ -31,4 +29,3 @@ nextTitle:
 <p>Fontface in technical pages and nav: 綫線
 <p class="cn">Fontface in chapter text: 聼聽
 <p>Fontface in technical pages and nav: 聼聽
-
