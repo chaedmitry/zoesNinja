@@ -21,9 +21,11 @@ const BlogPostTemplate = ({ data, intl }) => {
       </article>
       {/*pagination*/}
       
-      <nav className="blog-post-nav">
-      <p>{intl.formatMessage({id: "next-chapter" })} — <Link to={nextSlug} rel="next"> {nextTitle}</Link></p>
-      </nav>
+      {nextSlug ? (
+        <nav className="blog-post-nav">
+          <p>{intl.formatMessage({id: "next-chapter" })} — <Link to={nextSlug} rel="next"> {nextTitle}</Link></p>
+        </nav>) : null
+      }
     </Layout>
   )
 }
