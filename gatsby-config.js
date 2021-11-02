@@ -33,7 +33,7 @@ module.exports = {
         path: `${__dirname}/src/pages/chapters`,
       },
     },
-    /* Fetch md images*/
+    /* Fetch md images
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -41,6 +41,7 @@ module.exports = {
         path: `${__dirname}/src/pages/chapters/images`,
       },
     },
+    */
 
     /**
      * The following two plugins are required if you want to use Gatsby image
