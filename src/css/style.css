@@ -59,13 +59,13 @@
 
 @font-face {
   font-family: "Literata TT Subhead";
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
-  src: url('./fonts/LiterataTT-SubheadRegular.eot'); /* IE9 */
-  src: url('./fonts/LiterataTT-SubheadRegular.woff2') format('woff2'), /* Super Modern Browsers */
-      url('./fonts/LiterataTT-SubheadRegular.woff') format('woff'), /* Pretty Modern Browsers */
-      url('./fonts/LiterataTT-SubheadRegular.ttf') format('truetype');  /* Safari, Android, iOS */
+  src: url('./fonts/LiterataTT-SubheadMedium.eot'); /* IE9 */
+  src: url('./fonts/LiterataTT-SubheadMedium.woff2') format('woff2'), /* Super Modern Browsers */
+      url('./fonts/LiterataTT-SubheadMedium.woff') format('woff'), /* Pretty Modern Browsers */
+      url('./fonts/LiterataTT-SubheadMedium.ttf') format('truetype');  /* Safari, Android, iOS */
 }
 
 :root {
@@ -192,7 +192,7 @@ body {
 }
 
 footer {
-  padding: var(--spacing-8) var(--spacing-0) var(--spacing-0) var(--spacing-0);
+  padding: var(--spacing-20) var(--spacing-0) var(--spacing-0) var(--spacing-0);
   display: flex;
   justify-content: space-between;
 }
@@ -217,16 +217,17 @@ hr {
 h1,
 h2 {
   margin-top: var(--spacing-0);
-  margin-bottom: var(--spacing-4);
+  margin-bottom: var(--spacing-5);
   color: var(--color-heading);
   padding-right: var(--spacing-1);
 }
 
 h1 {
-  font-family: "Literata TT Subhead";
+  font-family: "Literata TT Subhead", "Noto Serif TC";
   font-size: var(--fontSize-heading);
-  font-weight: 400;
+  font-weight: 500;
   line-height: var(--lineHeight-heading);
+  letter-spacing: -0.02rem;
 }
 
 h2 {
@@ -296,7 +297,7 @@ li > ul {
 }
 
 q { 
-  font-family: "Literata TT Caption";
+  font-family: "Literata TT Caption", "Noto Serif TC";
   font-size: var(--fontSize-accent);
   font-weight: 500;
   line-height: var(--spacing-7);
@@ -456,14 +457,14 @@ a {
   margin: var(--spacing-0) auto;
   max-width: var(--maxWidth-wrapper);
   padding: var(--spacing-0) var(--spacing-4) var(--spacing-0) var(--spacing-4);
-  animation: fadeInAnimation ease-in 300ms;
+  animation: fadeInAnimation ease-in 400ms;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
 
 @keyframes fadeInAnimation {
   0% {
-      transform: translate(0rem, 1rem);
+      transform: translate(0rem, 2rem);
       opacity: 0;
   }
   100% {
@@ -503,10 +504,6 @@ a {
   margin-top: var(--spacing-0);
 }
 
-.blog-post header h1 {
-  margin: var(--spacing-0) var(--spacing-0) var(--spacing-5) var(--spacing-0);
-}
-
 .blog-post header p {
   font-size: var(--fontSize-accent);
 }
@@ -544,6 +541,13 @@ a {
 
 /* Media queries */
 
+@media (min-width: 1024px) {
+  html, body {
+    max-width: none;
+    overflow-x: visible;
+  }
+}
+
 @media (min-width: 768px) {
   :root {
     --fontSize-root: 22px;
@@ -573,14 +577,9 @@ a {
   }
   
   .author-illustration {
-    margin-top: calc(-1 * var(--spacing-12));
+    /*margin-top: calc(-1 * var(--spacing-12));
     width: 82%;
-    height: 100%;
-  }
-
-  html, body {
-    max-width: none;
-    overflow-x: visible;
+    height: 100%;*/
   }
 }
 
