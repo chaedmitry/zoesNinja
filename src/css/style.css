@@ -108,7 +108,7 @@
   --color-primary-20: hsla(188, 40%, 47%, .2);
   --color-primary-50: hsla(188, 40%, 47%, .5);
   --color-primary-dark: hsla(188, 40%, 32%, 1);
-  --color-secondary: hsla(6, 91%, 76%, 1);
+  --color-secondary: hsla(6, 91%, 80%, 1);
   --color-outline: hsla(188, 30%, 88%, 1);
   --color-outline-dark: hsla(188, 40%, 72%, 1);
   --color-background: hsla(188, 30%, 90%, 1);
@@ -304,9 +304,9 @@ q {
   max-width: var(--maxWidth-xs);
   padding: var(--spacing-6) var(--spacing-8) var(--spacing-8) var(--spacing-8);
   margin: var(--spacing-10) auto;
-  background: radial-gradient(hsla(188,50%,88%,1), hsla(188,50%,84%,1));
+  background: radial-gradient(hsla(188,40%,88%,1), hsla(188,40%,82%,1));
   border-radius: var(--spacing-7) var(--spacing-7) var(--spacing-7) var(--spacing-1);
-  box-shadow: 4px 4px 24px hsla(188,40%,88%,1);
+  box-shadow: 4px 4px 24px hsla(188,20%,88%,1);
   quotes: none;
 }
 
@@ -318,9 +318,9 @@ blockquote {
   line-height: var(--spacing-7);
   color: var(--color-black);
   text-align: center;
-  padding: var(--spacing-10) var(--spacing-6) var(--spacing-12) var(--spacing-6);
-  margin: 0;
-  background: radial-gradient(var(--color-secondary), var(--color-background-light-5) 60%);
+  padding: var(--spacing-20) var(--spacing-6) var(--spacing-24) var(--spacing-6);
+  margin: -1.5rem 0;
+  background: radial-gradient(ellipse 50% 40%, var(--color-secondary), var(--color-background-light-5));
 }
 
 blockquote > :last-child {
@@ -536,6 +536,10 @@ a {
 
 .blog-post-nav ul li {
   margin-right: var(--spacing-2);
+}
+
+.blog-post-nav a {
+  text-decoration: none;
 }
 
 /* Media queries */

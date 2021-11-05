@@ -23,7 +23,7 @@ const BlogPostTemplate = ({ data, intl }) => {
       
       {nextSlug ? (
         <nav className="blog-post-nav">
-          <p>{intl.formatMessage({id: "next-chapter" })} — <Link to={nextSlug} rel="next"> {nextTitle}</Link></p>
+          <p>{intl.formatMessage({id: "next-chapter" })}: <Link to={nextSlug} rel="next"> {nextTitle}</Link></p>
         </nav>) : null
       }
     </Layout>
