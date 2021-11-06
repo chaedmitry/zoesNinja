@@ -100,6 +100,6 @@ module.exports = {
     contact: `https://forms.gle/4jVrUdu7TSTtFoVy5`,
     title: `Zoe's Ninja`,
     description: `2020 had just begun when I was hit by an unexpected diagnosis of a very rare cancer of the salivary gland. It jolted the hectic life of this forty-something years old into a sudden halt as surgery, radiotherapy and a long recovery phase ensued.`,
-    image: `content/assets/og_image.jpg`
+    image: `https://zoesninja.gatsbyjs.io/content/assets/og_image.jpg`,
   }
 }
