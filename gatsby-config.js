@@ -92,7 +92,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#D1E3E6`, //color of the browser header
         display: `minimal-ui`,
-        icon: `content/assets/favicon.png`,
+        icon: `static/favicon.png`,
       },
     },
   ],
