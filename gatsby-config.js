@@ -65,20 +65,6 @@ module.exports = {
       },
     },
 
-    /**
-     * We need this plugin so that it adds the "File.publicURL" to our site
-     * It will allow us to access static url's for assets like PDF's
-     *
-     * See https://www.gatsbyjs.org/packages/gatsby-source-filesystem/ for more info
-     */
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `assets`,
-        path: `${__dirname}/content/assets`,
-      },
-    },
-
     // See https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet/?=gatsby-plugin-react-helmet
     `gatsby-plugin-react-helmet`,
 
@@ -92,7 +78,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#D1E3E6`, //color of the browser header
         display: `minimal-ui`,
-        icon: `content/assets/favicon.png`,
+        icon: `static/favicon.png`,
       },
     },
   ],
@@ -100,6 +86,5 @@ module.exports = {
     contact: `https://forms.gle/4jVrUdu7TSTtFoVy5`,
     title: `Zoe's Ninja`,
     description: `2020 had just begun when I was hit by an unexpected diagnosis of a very rare cancer of the salivary gland. It jolted the hectic life of this forty-something years old into a sudden halt as surgery, radiotherapy and a long recovery phase ensued.`,
-    image: `https://zoesninja.gatsbyjs.io/content/assets/og_image.jpg`,
   }
 }
