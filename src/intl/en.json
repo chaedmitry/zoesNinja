@@ -9,7 +9,8 @@
     "header-contact": "Contact Zoe",
     "header-chapters-link": "Chapters",
 
-    "footer-title": ". From Zoe with ❤️",
+    "footer-title": ". From Zoe with",
+    "footer-heart": "♥",
 
     "404-title": "It seems you got lost :(",
     "404-message": "This page does not exist. Use the navigation above to find the page you need.",
