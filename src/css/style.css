@@ -229,6 +229,8 @@ h1 {
   font-weight: 500;
   line-height: var(--lineHeight-heading);
   letter-spacing: -0.02rem;
+  font-feature-settings: "dlig" 1;
+  font-variant-ligatures: discretionary-ligatures;
 }
 
 h2 {
