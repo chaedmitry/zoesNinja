@@ -193,9 +193,13 @@ body {
 }
 
 footer {
-  padding: var(--spacing-20) var(--spacing-0) var(--spacing-0) var(--spacing-0);
+  padding: var(--spacing-20) var(--spacing-0) var(--spacing-5) var(--spacing-0);
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+}
+
+footer p {
+  margin: 0;
 }
 
 hr {
@@ -370,6 +374,15 @@ a {
     color: var(--color-visited);
   }
   a:visited:active {
+    color: var(--color-black);
+  }
+  a.secondary:active {
+    color: var(--color-black);
+  }
+  a.secondary:visited {
+    color: var(--color-pale);
+  }
+  a.secondary:visited:active {
     color: var(--color-black);
   }
 
