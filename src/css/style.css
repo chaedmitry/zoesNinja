@@ -11,6 +11,7 @@
   src: url('./fonts/LiterataTT-TextRegular.woff2') format('woff2'), /* Super Modern Browsers */
       url('./fonts/LiterataTT-TextRegular.woff') format('woff'), /* Pretty Modern Browsers */
       url('./fonts/LiterataTT-TextRegular.ttf') format('truetype');  /* Safari, Android, iOS */
+  unicode-range: U+0000—007F, U+0080–00FF, U+0100–017F;
 }
 
 @font-face {
@@ -22,6 +23,7 @@
   src: url('./fonts/LiterataTT-TextItalic.woff2') format('woff2'), /* Super Modern Browsers */
       url('./fonts/LiterataTT-TextItalic.woff') format('woff'), /* Pretty Modern Browsers */
       url('./fonts/LiterataTT-TextItalic.ttf') format('truetype');  /* Safari, Android, iOS */
+  unicode-range: U+0000—007F, U+0080–00FF, U+0100–017F;
 }
 
 @font-face {
@@ -33,6 +35,7 @@
   src: url('./fonts/LiterataTT-CaptionMedium.woff2') format('woff2'), /* Super Modern Browsers */
       url('./fonts/LiterataTT-CaptionMedium.woff') format('woff'), /* Pretty Modern Browsers */
       url('./fonts/LiterataTT-CaptionMedium.ttf') format('truetype');  /* Safari, Android, iOS */
+  unicode-range: U+0000—007F, U+0080–00FF, U+0100–017F;
 }
 
 @font-face {
@@ -44,6 +47,7 @@
   src: url('./fonts/LiterataTT-CaptionMediumItalic.woff2') format('woff2'), /* Super Modern Browsers */
       url('./fonts/LiterataTT-CaptionMediumItalic.woff') format('woff'), /* Pretty Modern Browsers */
       url('./fonts/LiterataTT-CaptionMediumItalic.ttf') format('truetype');  /* Safari, Android, iOS */
+  unicode-range: U+0000—007F, U+0080–00FF, U+0100–017F;
 }
 
 @font-face {
@@ -55,6 +59,7 @@
   src: url('./fonts/LiterataTT-SubheadBold.woff2') format('woff2'), /* Super Modern Browsers */
       url('./fonts/LiterataTT-SubheadBold.woff') format('woff'), /* Pretty Modern Browsers */
       url('./fonts/LiterataTT-SubheadBold.ttf') format('truetype');  /* Safari, Android, iOS */
+  unicode-range: U+0000—007F, U+0080–00FF, U+0100–017F;
 }
 
 @font-face {
@@ -66,6 +71,7 @@
   src: url('./fonts/LiterataTT-SubheadMedium.woff2') format('woff2'), /* Super Modern Browsers */
       url('./fonts/LiterataTT-SubheadMedium.woff') format('woff'), /* Pretty Modern Browsers */
       url('./fonts/LiterataTT-SubheadMedium.ttf') format('truetype');  /* Safari, Android, iOS */
+  unicode-range: U+0000—007F, U+0080–00FF, U+0100–017F;
 }
 
 :root {
@@ -349,6 +355,10 @@ table {
 
 table thead tr th {
   border-bottom: 1px solid var(--color-accent);
+}
+
+.heart { 
+  color: var(--color-primary);
 }
 
 /* Link */
