@@ -11,7 +11,7 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import ogImage from "../../static/og_image.jpg"
 
-const Seo = ({ description, lang, meta, title, image }) => {
+const Seo = ({ meta, title }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -25,14 +25,12 @@ const Seo = ({ description, lang, meta, title, image }) => {
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = title || site.siteMetadata.title
+  const metaDescription = site.siteMetadata.description
+  const defaultTitle = site.siteMetadata.title
 
   return (
     <Helmet
-      htmlAttributes={{
-        lang,
-      }}
+      /*htmlAttributes={{ lang }}*/
       title={title}
       titleTemplate={defaultTitle ? `%s — ${defaultTitle}` : null}
       meta={[
@@ -74,7 +72,7 @@ const Seo = ({ description, lang, meta, title, image }) => {
 }
 
 Seo.defaultProps = {
-  lang: `en`,
+  /*lang: `en`,*/
   meta: [],
   description: ``,
 }

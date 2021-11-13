@@ -1,6 +1,6 @@
 /* CSS Custom Properties Definitions */
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&display=swap'); /* Chinese font */
 
 @font-face {
   font-family: "Literata TT";
@@ -11,6 +11,7 @@
   src: url('./fonts/LiterataTT-TextRegular.woff2') format('woff2'), /* Super Modern Browsers */
       url('./fonts/LiterataTT-TextRegular.woff') format('woff'), /* Pretty Modern Browsers */
       url('./fonts/LiterataTT-TextRegular.ttf') format('truetype');  /* Safari, Android, iOS */
+  unicode-range: U+0000—007F, U+0080–00FF, U+0100–017F;
 }
 
 @font-face {
@@ -22,17 +23,7 @@
   src: url('./fonts/LiterataTT-TextItalic.woff2') format('woff2'), /* Super Modern Browsers */
       url('./fonts/LiterataTT-TextItalic.woff') format('woff'), /* Pretty Modern Browsers */
       url('./fonts/LiterataTT-TextItalic.ttf') format('truetype');  /* Safari, Android, iOS */
-}
-
-@font-face {
-  font-family: "Literata TT Caption";
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-  src: url('./fonts/LiterataTT-CaptionMedium.eot'); /* IE9 */
-  src: url('./fonts/LiterataTT-CaptionMedium.woff2') format('woff2'), /* Super Modern Browsers */
-      url('./fonts/LiterataTT-CaptionMedium.woff') format('woff'), /* Pretty Modern Browsers */
-      url('./fonts/LiterataTT-CaptionMedium.ttf') format('truetype');  /* Safari, Android, iOS */
+  unicode-range: U+0000—007F, U+0080–00FF, U+0100–017F;
 }
 
 @font-face {
@@ -44,6 +35,7 @@
   src: url('./fonts/LiterataTT-CaptionMediumItalic.woff2') format('woff2'), /* Super Modern Browsers */
       url('./fonts/LiterataTT-CaptionMediumItalic.woff') format('woff'), /* Pretty Modern Browsers */
       url('./fonts/LiterataTT-CaptionMediumItalic.ttf') format('truetype');  /* Safari, Android, iOS */
+  unicode-range: U+0000—007F, U+0080–00FF, U+0100–017F;
 }
 
 @font-face {
@@ -55,6 +47,7 @@
   src: url('./fonts/LiterataTT-SubheadBold.woff2') format('woff2'), /* Super Modern Browsers */
       url('./fonts/LiterataTT-SubheadBold.woff') format('woff'), /* Pretty Modern Browsers */
       url('./fonts/LiterataTT-SubheadBold.ttf') format('truetype');  /* Safari, Android, iOS */
+  unicode-range: U+0000—007F, U+0080–00FF, U+0100–017F;
 }
 
 @font-face {
@@ -66,6 +59,7 @@
   src: url('./fonts/LiterataTT-SubheadMedium.woff2') format('woff2'), /* Super Modern Browsers */
       url('./fonts/LiterataTT-SubheadMedium.woff') format('woff'), /* Pretty Modern Browsers */
       url('./fonts/LiterataTT-SubheadMedium.ttf') format('truetype');  /* Safari, Android, iOS */
+  unicode-range: U+0000—007F, U+0080–00FF, U+0100–017F;
 }
 
 :root {
@@ -75,9 +69,6 @@
   --maxWidth-md: 28rem;
   --maxWidth-lg: 32rem;
   --maxWidth-xl: 36rem;
-  --maxWidth-2xl: 42rem;
-  --maxWidth-3xl: 48rem;
-  --maxWidth-4xl: 56rem;
   --maxWidth-full: "100%";
   --maxWidth-wrapper: var(--maxWidth-xl);
 
@@ -153,6 +144,8 @@ body {
 }
 
 .header {
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -193,9 +186,13 @@ body {
 }
 
 footer {
-  padding: var(--spacing-20) var(--spacing-0) var(--spacing-0) var(--spacing-0);
+  padding: var(--spacing-20) var(--spacing-0) var(--spacing-5) var(--spacing-0);
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+}
+
+footer p {
+  margin: 0;
 }
 
 hr {
@@ -229,8 +226,7 @@ h1 {
   font-weight: 500;
   line-height: var(--lineHeight-heading);
   letter-spacing: -0.02rem;
-  font-feature-settings: "dlig" 1;
-  font-variant-ligatures: discretionary-ligatures;
+  font-feature-settings: "liga" 1, "clig" 1, "dlig" 1;
 }
 
 h2 {
@@ -238,13 +234,7 @@ h2 {
   font-weight: 700;
 }
 
-h1 > a {
-  color: var(--color-primary-dark);
-  text-decoration: none;
-}
-
 h2 > a {
-  color: var(--color-primary-dark);
   text-decoration: none;
 }
 
@@ -258,10 +248,6 @@ p {
 .cn {
   font-family: 'Noto Serif TC', serif;
   font-weight: 500;
-}
-
-blockquote.cn {
-  font-style: normal;
 }
 
 .lang-selector {
@@ -293,18 +279,18 @@ li > ul {
 }
 
 q { 
+  display: block;
+  quotes: none;
   font-family: "Literata TT Caption", "Noto Serif TC";
   font-size: var(--fontSize-accent);
   font-style: italic;
   line-height: var(--spacing-7);
-  display: block;
   max-width: var(--maxWidth-xs);
   padding: var(--spacing-6) var(--spacing-8) var(--spacing-8) var(--spacing-8);
   margin: var(--spacing-10) auto;
   background: radial-gradient(hsla(188,40%,88%,1), hsla(188,40%,82%,1));
   border-radius: var(--spacing-7) var(--spacing-7) var(--spacing-7) var(--spacing-1);
   box-shadow: 4px 4px 32px hsla(188,20%,88%,1);
-  quotes: none;
 }
 
 blockquote {
@@ -320,6 +306,10 @@ blockquote {
   background: radial-gradient(ellipse 30% 30%, var(--color-secondary), var(--color-background-light-5));
 }
 
+blockquote.cn, q.cn {
+  font-style: normal;
+}
+
 blockquote > :last-child {
   margin-bottom: var(--spacing-0);
 }
@@ -332,20 +322,13 @@ blockquote > ol {
 .author-illustration {
   width: 130%;
   margin-left: 50%;
-  margin-top: -2rem;
+  margin-top: -1rem;
   transform: translateX(-50%);
   display: block;
 }
 
-table {
-  width: 100%;
-  margin-bottom: var(--spacing-8);
-  border-collapse: collapse;
-  border-spacing: 0.25rem;
-}
-
-table thead tr th {
-  border-bottom: 1px solid var(--color-accent);
+.heart { 
+  color: var(--color-primary);
 }
 
 /* Link */
@@ -371,6 +354,15 @@ a {
     color: var(--color-visited);
   }
   a:visited:active {
+    color: var(--color-black);
+  }
+  a.secondary:active {
+    color: var(--color-black);
+  }
+  a.secondary:visited {
+    color: var(--color-pale);
+  }
+  a.secondary:visited:active {
     color: var(--color-black);
   }
 
@@ -469,15 +461,6 @@ a {
    }
 }
 
-.global-header {
-  margin-bottom: var(--spacing-12);
-}
-
-.main-heading {
-  font-size: var(--fontSize-7);
-  margin: 0;
-}
-
 .chapters-list {
   list-style: none;
   background-color: var(--color-background-lightest);
@@ -520,18 +503,6 @@ a {
   margin: 0;
 }
 
-.blog-post-nav ul {
-  margin: var(--spacing-0);
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  padding: 0;
-}
-
-.blog-post-nav ul li {
-  margin-right: var(--spacing-2);
-}
-
 .blog-post-nav a {
   text-decoration: none;
 }
@@ -550,18 +521,6 @@ a {
     --fontSize-root: 22px;
     --fontSize-heading: 2.75rem;
     --lineHeight-heading: 3rem;
-  }
-
-  .header {
-    position: sticky;
-    top: 0;
-  }
-
-  .blog-title {
-    font-weight: 400;
-    display: flex;
-    align-self: center;
-    margin-left: var(--spacing-2);
   }
 
   .blog-logo {
