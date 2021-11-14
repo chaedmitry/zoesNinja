@@ -8,6 +8,8 @@ module.exports = {
    * More plugins: https://www.gatsbyjs.com/plugins/
    */
   plugins: [
+    `gatsby-plugin-preload-fonts`,
+    
     {
       resolve: `gatsby-plugin-react-intl`,
       options: {

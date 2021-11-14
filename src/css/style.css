@@ -466,16 +466,20 @@ a {
   background-color: var(--color-background-lightest);
   box-shadow: 0 0 2rem var(--color-background);
   border-radius: var(--spacing-2);
-  padding: var(--spacing-1) var(--spacing-4) var(--spacing-6) var(--spacing-4);
+  padding: var(--spacing-2) var(--spacing-4) var(--spacing-2) var(--spacing-4);
   margin: 0;
 }
 
 .post-list-item {
-  margin-top: var(--spacing-4);
+  padding: var(--spacing-2) 0 var(--spacing-3) 0;
+  border-bottom: 1px solid var(--color-background);
 }
+  .post-list-item:last-child {
+    border-bottom: none;
+  }
 
 .post-list-item p {
-  margin-bottom: var(--spacing-0);
+  margin: 0;
 }
 
 .post-list-item h2 {
@@ -529,7 +533,7 @@ a {
   }
 
   .chapters-list {
-    padding: var(--spacing-2) var(--spacing-8) var(--spacing-10) var(--spacing-8);
+    padding: var(--spacing-3) var(--spacing-8) var(--spacing-4) var(--spacing-8);
   }
 }
 
