@@ -8,10 +8,9 @@
   font-style: normal;
   font-display: swap;
   src: url('./fonts/LiterataTT-TextRegular.eot'); /* IE9 */
-  src: url('./fonts/LiterataTT-TextRegular.woff2') format('woff2'), /* Super Modern Browsers */
-      url('./fonts/LiterataTT-TextRegular.woff') format('woff'), /* Pretty Modern Browsers */
-      url('./fonts/LiterataTT-TextRegular.ttf') format('truetype');  /* Safari, Android, iOS */
-  unicode-range: U+0000—007F, U+0080–00FF, U+0100–017F;
+  src: url('./fonts/LiterataTT-TextRegular-l.woff2') format('woff2'), /* Super Modern Browsers */
+      url('./fonts/LiterataTT-TextRegular-l.woff') format('woff'), /* Pretty Modern Browsers */
+      url('./fonts/LiterataTT-TextRegular-l.ttf') format('truetype');  /* Safari, Android, iOS */
 }
 
 @font-face {
@@ -20,10 +19,9 @@
   font-style: italic;
   font-display: swap;
   src: url('./fonts/LiterataTT-TextItalic.eot'); /* IE9 */
-  src: url('./fonts/LiterataTT-TextItalic.woff2') format('woff2'), /* Super Modern Browsers */
-      url('./fonts/LiterataTT-TextItalic.woff') format('woff'), /* Pretty Modern Browsers */
-      url('./fonts/LiterataTT-TextItalic.ttf') format('truetype');  /* Safari, Android, iOS */
-  unicode-range: U+0000—007F, U+0080–00FF, U+0100–017F;
+  src: url('./fonts/LiterataTT-TextItalic-l.woff2') format('woff2'), /* Super Modern Browsers */
+      url('./fonts/LiterataTT-TextItalic-l.woff') format('woff'), /* Pretty Modern Browsers */
+      url('./fonts/LiterataTT-TextItalic-l.ttf') format('truetype');  /* Safari, Android, iOS */
 }
 
 @font-face {
@@ -32,10 +30,9 @@
   font-style: italic;
   font-display: swap;
   src: url('./fonts/LiterataTT-CaptionMediumItalic.eot'); /* IE9 */
-  src: url('./fonts/LiterataTT-CaptionMediumItalic.woff2') format('woff2'), /* Super Modern Browsers */
-      url('./fonts/LiterataTT-CaptionMediumItalic.woff') format('woff'), /* Pretty Modern Browsers */
-      url('./fonts/LiterataTT-CaptionMediumItalic.ttf') format('truetype');  /* Safari, Android, iOS */
-  unicode-range: U+0000—007F, U+0080–00FF, U+0100–017F;
+  src: url('./fonts/LiterataTT-CaptionMediumItalic-l.woff2') format('woff2'), /* Super Modern Browsers */
+      url('./fonts/LiterataTT-CaptionMediumItalic-l.woff') format('woff'), /* Pretty Modern Browsers */
+      url('./fonts/LiterataTT-CaptionMediumItalic-l.ttf') format('truetype');  /* Safari, Android, iOS */
 }
 
 @font-face {
@@ -44,10 +41,9 @@
   font-style: normal;
   font-display: swap;
   src: url('./fonts/LiterataTT-SubheadBold.eot'); /* IE9 */
-  src: url('./fonts/LiterataTT-SubheadBold.woff2') format('woff2'), /* Super Modern Browsers */
-      url('./fonts/LiterataTT-SubheadBold.woff') format('woff'), /* Pretty Modern Browsers */
-      url('./fonts/LiterataTT-SubheadBold.ttf') format('truetype');  /* Safari, Android, iOS */
-  unicode-range: U+0000—007F, U+0080–00FF, U+0100–017F;
+  src: url('./fonts/LiterataTT-SubheadBold-l.woff2') format('woff2'), /* Super Modern Browsers */
+      url('./fonts/LiterataTT-SubheadBold-l.woff') format('woff'), /* Pretty Modern Browsers */
+      url('./fonts/LiterataTT-SubheadBold-l.ttf') format('truetype');  /* Safari, Android, iOS */
 }
 
 @font-face {
@@ -56,10 +52,9 @@
   font-style: normal;
   font-display: swap;
   src: url('./fonts/LiterataTT-SubheadMedium.eot'); /* IE9 */
-  src: url('./fonts/LiterataTT-SubheadMedium.woff2') format('woff2'), /* Super Modern Browsers */
-      url('./fonts/LiterataTT-SubheadMedium.woff') format('woff'), /* Pretty Modern Browsers */
-      url('./fonts/LiterataTT-SubheadMedium.ttf') format('truetype');  /* Safari, Android, iOS */
-  unicode-range: U+0000—007F, U+0080–00FF, U+0100–017F;
+  src: url('./fonts/LiterataTT-SubheadMedium-l.woff2') format('woff2'), /* Super Modern Browsers */
+      url('./fonts/LiterataTT-SubheadMedium-l.woff') format('woff'), /* Pretty Modern Browsers */
+      url('./fonts/LiterataTT-SubheadMedium-l.ttf') format('truetype');  /* Safari, Android, iOS */
 }
 
 :root {
@@ -321,6 +316,7 @@ blockquote > ol {
 
 .author-illustration {
   width: 130%;
+  height: 100%;
   margin-left: 50%;
   margin-top: -1rem;
   transform: translateX(-50%);
@@ -466,16 +462,20 @@ a {
   background-color: var(--color-background-lightest);
   box-shadow: 0 0 2rem var(--color-background);
   border-radius: var(--spacing-2);
-  padding: var(--spacing-1) var(--spacing-4) var(--spacing-6) var(--spacing-4);
+  padding: var(--spacing-2) var(--spacing-4) var(--spacing-2) var(--spacing-4);
   margin: 0;
 }
 
 .post-list-item {
-  margin-top: var(--spacing-4);
+  padding: var(--spacing-2) 0 var(--spacing-3) 0;
+  border-bottom: 1px solid var(--color-background);
 }
+  .post-list-item:last-child {
+    border-bottom: none;
+  }
 
 .post-list-item p {
-  margin-bottom: var(--spacing-0);
+  margin: 0;
 }
 
 .post-list-item h2 {
@@ -490,6 +490,7 @@ a {
 
 .flag {
   height: 20px;
+  width:  20px;
 }
 
 .blog-post-nav {
@@ -529,7 +530,7 @@ a {
   }
 
   .chapters-list {
-    padding: var(--spacing-2) var(--spacing-8) var(--spacing-10) var(--spacing-8);
+    padding: var(--spacing-3) var(--spacing-8) var(--spacing-4) var(--spacing-8);
   }
 }
 

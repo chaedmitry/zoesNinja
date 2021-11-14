@@ -30,21 +30,13 @@ const BlogIndex = ( {data, intl} ) => {
           const title = post.frontmatter.title
 
           return (
-            <li key={post.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    <Link to={post.frontmatter.slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                  <p className='secondary'>{post.frontmatter.category}</p>
-                </header>
-              </article>
+            <li className="post-list-item" key={post.slug}>
+              <h2>
+                <Link to={post.frontmatter.slug} itemProp="url">
+                  <span itemProp="headline">{title}</span>
+                </Link>
+              </h2>
+              <p className='secondary'>{post.frontmatter.category}</p>
             </li>
           )
         })}
