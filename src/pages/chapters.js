@@ -30,7 +30,7 @@ const BlogIndex = ( {data, intl} ) => {
           const title = post.frontmatter.title
 
           return (
-            <li className="post-list-item" key={post.slug}>
+            <li className="post-list-item" key={post.frontmatter.slug}>
               <h2>
                 <Link to={post.frontmatter.slug} itemProp="url">
                   <span itemProp="headline">{title}</span>
