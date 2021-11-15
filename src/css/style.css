@@ -323,6 +323,10 @@ blockquote > ol {
   display: block;
 }
 
+.gatsby-image-wrapper-constrained {
+  display: block;
+}
+
 .heart { 
   color: var(--color-primary);
 }
