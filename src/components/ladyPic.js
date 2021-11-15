@@ -9,6 +9,9 @@ export default function LadyPic() {
             alt="Illustration of Zoe"
             placeholder="blurred"	
             quality="100"
+            style={{
+                display: "block",
+            }}
         />
     )
 }
