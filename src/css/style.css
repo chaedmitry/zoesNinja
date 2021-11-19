@@ -280,7 +280,7 @@ q {
   font-size: var(--fontSize-accent);
   font-style: italic;
   line-height: var(--spacing-7);
-  max-width: var(--maxWidth-xs);
+  max-width: var(--maxWidth-sm);
   padding: var(--spacing-6) var(--spacing-8) var(--spacing-8) var(--spacing-8);
   margin: var(--spacing-10) auto;
   background: radial-gradient(hsla(188,40%,88%,1), hsla(188,40%,82%,1));
