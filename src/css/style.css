@@ -1,8 +1,39 @@
 /* CSS Custom Properties Definitions */
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&display=swap'); /* Chinese font */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600&display=swap'); /* Chinese font */
 
-@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+@font-face {
+  font-family: "Alegreya";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('./fonts/Alegreya-Regular-l.eot'); /* IE9 */
+  src: url('./fonts/Alegreya-Regular-l.woff2') format('woff2'), /* Super Modern Browsers */
+      url('./fonts/Alegreya-Regular-l.woff') format('woff'), /* Pretty Modern Browsers */
+      url('./fonts/Alegreya-Regular-l.ttf') format('truetype');  /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: "Alegreya";
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: url('./fonts/Alegreya-Italic-l.eot'); /* IE9 */
+  src: url('./fonts/Alegreya-Italic-l.woff2') format('woff2'), /* Super Modern Browsers */
+      url('./fonts/Alegreya-Italic-l.woff') format('woff'), /* Pretty Modern Browsers */
+      url('./fonts/Alegreya-Italic-l.ttf') format('truetype');  /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: "Alegreya";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url('./fonts/Alegreya-SemiBold-l.eot'); /* IE9 */
+  src: url('./fonts/Alegreya-SemiBold-l.woff2') format('woff2'), /* Super Modern Browsers */
+      url('./fonts/Alegreya-SemiBold-l.woff') format('woff'), /* Pretty Modern Browsers */
+      url('./fonts/Alegreya-SemiBold-l.ttf') format('truetype');  /* Safari, Android, iOS */
+}
 
 :root {
   --maxWidth-none: "none";
@@ -118,7 +149,6 @@ body {
 .blog-title {
   display: flex;
   align-self: center;
-  font-weight: 400;
   margin-left: var(--spacing-2);
 }
 
@@ -165,9 +195,8 @@ h2 {
 h1 {
   font-family: "Alegreya", "Noto Serif TC";
   font-size: var(--fontSize-heading);
-  font-weight: 500;
+  font-weight: 400;
   line-height: var(--lineHeight-heading);
-  letter-spacing: -0.02rem;
   font-feature-settings: "liga" 1, "dlig" 1, "clig" 1;
 }
 
@@ -185,6 +214,7 @@ h2 > a {
 p {
   margin: var(--spacing-0) var(--spacing-0) var(--spacing-5) var(--spacing-0);
   padding: var(--spacing-0);
+  letter-spacing: 0.1px;
 }
 
 .cn {
@@ -220,10 +250,10 @@ li > ul {
 }
 
 q { 
+  font-size: var(--fontSize-accent);
+  line-height: 1.7rem;
   display: block;
   quotes: none;
-  font-size: var(--fontSize-accent);
-  line-height: var(--spacing-7);
   max-width: var(--maxWidth-sm);
   padding: var(--spacing-6) var(--spacing-8) var(--spacing-8) var(--spacing-8);
   margin: var(--spacing-10) auto;
@@ -234,9 +264,7 @@ q {
 
 blockquote {
   font-size: var(--fontSize-accent);
-  font-weight: 400;
-  line-height: var(--spacing-7);
-  color: var(--color-black);
+  line-height: 1.7rem;
   text-align: center;
   padding: var(--spacing-16) var(--spacing-6) var(--spacing-20) var(--spacing-6);
   margin: -1.5rem 0;
@@ -244,7 +272,7 @@ blockquote {
 }
 
 blockquote.cn, q.cn {
-  font-style: normal;
+  line-height: 1.85rem;
 }
 
 blockquote > :last-child {
@@ -479,6 +507,7 @@ a {
 @media (min-width: 400px) {
   .chapters-label {
     display: flex;
+    align-items: stretch;
   }
 
   .chapters-icon {
