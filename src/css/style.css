@@ -218,7 +218,7 @@ p {
 }
 
 .cn {
- line-height: 1.5rem;
+  text-align: justify;
 }
 
 .lang-selector {
@@ -273,6 +273,14 @@ blockquote {
 
 blockquote.cn, q.cn {
   line-height: 1.85rem;
+}
+
+blockquote.cn {
+  text-align: center;
+}
+
+q.cn {
+  text-align: left;
 }
 
 blockquote > :last-child {
