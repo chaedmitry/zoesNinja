@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&display=swap'); /* Chinese font */
 
-@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,600;1,400&family=Noto+Sans+TC:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
 :root {
   --maxWidth-none: "none";
@@ -33,9 +33,9 @@
   
   --fontSize-root: 19px;
   --fontSize-accent: 1.25rem;
-  --fontSize-heading: 2.25rem;
+  --fontSize-heading: 2rem;
 
-  --lineHeight-heading: 2.25rem;
+  --lineHeight-heading: 2rem;
 
   --color-primary: hsla(188, 40%, 47%, 1);
   --color-primary-20: hsla(188, 40%, 47%, .2);
@@ -165,7 +165,7 @@ h2 {
 h1 {
   font-family: "Alegreya", "Noto Serif TC";
   font-size: var(--fontSize-heading);
-  font-weight: 600;
+  font-weight: 500;
   line-height: var(--lineHeight-heading);
   letter-spacing: -0.02rem;
   font-feature-settings: "liga" 1, "dlig" 1, "clig" 1;
@@ -188,8 +188,7 @@ p {
 }
 
 .cn {
-  font-family: 'Noto Serif TC', serif;
-  font-weight: 500;
+ line-height: 1.5rem;
 }
 
 .lang-selector {
@@ -223,7 +222,6 @@ li > ul {
 q { 
   display: block;
   quotes: none;
-  font-family: "Alegreya", "Noto Serif TC";
   font-size: var(--fontSize-accent);
   line-height: var(--spacing-7);
   max-width: var(--maxWidth-sm);
@@ -235,9 +233,8 @@ q {
 }
 
 blockquote {
-  font-family: "Alegreya";
   font-size: var(--fontSize-accent);
-  font-weight: 500;
+  font-weight: 400;
   line-height: var(--spacing-7);
   color: var(--color-black);
   text-align: center;
