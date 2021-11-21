@@ -107,7 +107,7 @@ html {
 }
 
 body {
-  font-family: "Alegreya", "Noto Serif TC", serif, system-ui, -apple-system, BlinkMacSystemFont,
+  font-family: "Alegreya", "Noto Serif TC", "Bookman", "Times New Roman", serif, system-ui, -apple-system, BlinkMacSystemFont,
   "Segoe UI", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: var(--fontSize-root);
   line-height: 1.4rem;
