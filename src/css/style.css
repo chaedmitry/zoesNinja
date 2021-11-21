@@ -93,7 +93,7 @@ body {
   width: 100%;
   align-items: flex-start;
   padding: var(--spacing-0) var(--spacing-3) var(--spacing-0) var(--spacing-0);
-  margin-bottom: var(--spacing-8);
+  margin-bottom: var(--spacing-6);
   height: 3.5rem;
   z-index: 1;
 }
@@ -165,11 +165,10 @@ h2 {
 h1 {
   font-family: "Alegreya", "Noto Serif TC";
   font-size: var(--fontSize-heading);
-  font-weight: 400;
+  font-weight: 600;
   line-height: var(--lineHeight-heading);
   letter-spacing: -0.02rem;
-  font-feature-settings: "liga", "clig", "dlig";
-  font-variant-ligatures: discretionary-ligatures;
+  font-feature-settings: "liga" 1, "dlig" 1, "clig" 1;
 }
 
 h2 {
@@ -465,7 +464,7 @@ a {
 
 @media (min-width: 768px) {
   :root {
-    --fontSize-root: 25px;
+    --fontSize-root: 24px;
     --fontSize-heading: 2.75rem;
     --lineHeight-heading: 3rem;
   }
