@@ -1,60 +1,38 @@
 /* CSS Custom Properties Definitions */
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&display=swap'); /* Chinese font */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600&display=swap'); /* Chinese font */
 
 @font-face {
-  font-family: "Literata TT";
+  font-family: "Alegreya";
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url('./fonts/LiterataTT-TextRegular.eot'); /* IE9 */
-  src: url('./fonts/LiterataTT-TextRegular-l.woff2') format('woff2'), /* Super Modern Browsers */
-      url('./fonts/LiterataTT-TextRegular-l.woff') format('woff'), /* Pretty Modern Browsers */
-      url('./fonts/LiterataTT-TextRegular-l.ttf') format('truetype');  /* Safari, Android, iOS */
+  src: url('./fonts/Alegreya-Regular-l.eot'); /* IE9 */
+  src: url('./fonts/Alegreya-Regular-l.woff2') format('woff2'), /* Super Modern Browsers */
+      url('./fonts/Alegreya-Regular-l.woff') format('woff'), /* Pretty Modern Browsers */
+      url('./fonts/Alegreya-Regular-l.ttf') format('truetype');  /* Safari, Android, iOS */
 }
 
 @font-face {
-  font-family: "Literata TT";
+  font-family: "Alegreya";
   font-weight: 400;
   font-style: italic;
   font-display: swap;
-  src: url('./fonts/LiterataTT-TextItalic.eot'); /* IE9 */
-  src: url('./fonts/LiterataTT-TextItalic-l.woff2') format('woff2'), /* Super Modern Browsers */
-      url('./fonts/LiterataTT-TextItalic-l.woff') format('woff'), /* Pretty Modern Browsers */
-      url('./fonts/LiterataTT-TextItalic-l.ttf') format('truetype');  /* Safari, Android, iOS */
+  src: url('./fonts/Alegreya-Italic-l.eot'); /* IE9 */
+  src: url('./fonts/Alegreya-Italic-l.woff2') format('woff2'), /* Super Modern Browsers */
+      url('./fonts/Alegreya-Italic-l.woff') format('woff'), /* Pretty Modern Browsers */
+      url('./fonts/Alegreya-Italic-l.ttf') format('truetype');  /* Safari, Android, iOS */
 }
 
 @font-face {
-  font-family: "Literata TT Caption";
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-  src: url('./fonts/LiterataTT-CaptionMediumItalic.eot'); /* IE9 */
-  src: url('./fonts/LiterataTT-CaptionMediumItalic-l.woff2') format('woff2'), /* Super Modern Browsers */
-      url('./fonts/LiterataTT-CaptionMediumItalic-l.woff') format('woff'), /* Pretty Modern Browsers */
-      url('./fonts/LiterataTT-CaptionMediumItalic-l.ttf') format('truetype');  /* Safari, Android, iOS */
-}
-
-@font-face {
-  font-family: "Literata TT";
-  font-weight: 700;
+  font-family: "Alegreya";
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
-  src: url('./fonts/LiterataTT-SubheadBold.eot'); /* IE9 */
-  src: url('./fonts/LiterataTT-SubheadBold-l.woff2') format('woff2'), /* Super Modern Browsers */
-      url('./fonts/LiterataTT-SubheadBold-l.woff') format('woff'), /* Pretty Modern Browsers */
-      url('./fonts/LiterataTT-SubheadBold-l.ttf') format('truetype');  /* Safari, Android, iOS */
-}
-
-@font-face {
-  font-family: "Literata TT Subhead";
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-  src: url('./fonts/LiterataTT-SubheadMedium.eot'); /* IE9 */
-  src: url('./fonts/LiterataTT-SubheadMedium-l.woff2') format('woff2'), /* Super Modern Browsers */
-      url('./fonts/LiterataTT-SubheadMedium-l.woff') format('woff'), /* Pretty Modern Browsers */
-      url('./fonts/LiterataTT-SubheadMedium-l.ttf') format('truetype');  /* Safari, Android, iOS */
+  src: url('./fonts/Alegreya-SemiBold-l.eot'); /* IE9 */
+  src: url('./fonts/Alegreya-SemiBold-l.woff2') format('woff2'), /* Super Modern Browsers */
+      url('./fonts/Alegreya-SemiBold-l.woff') format('woff'), /* Pretty Modern Browsers */
+      url('./fonts/Alegreya-SemiBold-l.ttf') format('truetype');  /* Safari, Android, iOS */
 }
 
 :root {
@@ -65,7 +43,7 @@
   --maxWidth-lg: 32rem;
   --maxWidth-xl: 36rem;
   --maxWidth-full: "100%";
-  --maxWidth-wrapper: var(--maxWidth-xl);
+  --maxWidth-wrapper: var(--maxWidth-lg);
 
   --spacing-px: "1px";
   --spacing-0: 0;
@@ -84,11 +62,11 @@
   --spacing-24: 6rem;
   --spacing-32: 8rem;
   
-  --fontSize-root: 17px;
+  --fontSize-root: 19px;
   --fontSize-accent: 1.25rem;
   --fontSize-heading: 2rem;
 
-  --lineHeight-heading: 2.25rem;
+  --lineHeight-heading: 2rem;
 
   --color-primary: hsla(188, 40%, 47%, 1);
   --color-primary-20: hsla(188, 40%, 47%, .2);
@@ -129,10 +107,10 @@ html {
 }
 
 body {
-  font-family: "Literata TT", "Noto Serif TC", serif, system-ui, -apple-system, BlinkMacSystemFont,
+  font-family: "Alegreya", "Noto Serif TC", "Bookman", "Times New Roman", serif, system-ui, -apple-system, BlinkMacSystemFont,
   "Segoe UI", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: var(--fontSize-root);
-  line-height: 1.5rem;
+  line-height: 1.4rem;
   color: var(--color-black);
   background: linear-gradient(to bottom right, var(--color-background-light), var(--color-background));
   min-height: 100vh;
@@ -146,7 +124,7 @@ body {
   width: 100%;
   align-items: flex-start;
   padding: var(--spacing-0) var(--spacing-3) var(--spacing-0) var(--spacing-0);
-  margin-bottom: var(--spacing-8);
+  margin-bottom: var(--spacing-6);
   height: 3.5rem;
   z-index: 1;
 }
@@ -171,7 +149,6 @@ body {
 .blog-title {
   display: flex;
   align-self: center;
-  font-weight: 400;
   margin-left: var(--spacing-2);
 }
 
@@ -216,17 +193,16 @@ h2 {
 }
 
 h1 {
-  font-family: "Literata TT Subhead", "Noto Serif TC";
+  font-family: "Alegreya", "Noto Serif TC";
   font-size: var(--fontSize-heading);
-  font-weight: 500;
+  font-weight: 400;
   line-height: var(--lineHeight-heading);
-  letter-spacing: -0.02rem;
-  font-feature-settings: "liga" 1, "clig" 1, "dlig" 1;
+  font-feature-settings: "liga" 1, "dlig" 1, "clig" 1;
 }
 
 h2 {
   font-size: var(--fontSize-root);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 h2 > a {
@@ -238,11 +214,11 @@ h2 > a {
 p {
   margin: var(--spacing-0) var(--spacing-0) var(--spacing-5) var(--spacing-0);
   padding: var(--spacing-0);
+  letter-spacing: 0.1px;
 }
 
 .cn {
-  font-family: 'Noto Serif TC', serif;
-  font-weight: 500;
+  text-align: justify;
 }
 
 .lang-selector {
@@ -274,12 +250,10 @@ li > ul {
 }
 
 q { 
+  font-size: var(--fontSize-accent);
+  line-height: 1.7rem;
   display: block;
   quotes: none;
-  font-family: "Literata TT Caption", "Noto Serif TC";
-  font-size: var(--fontSize-accent);
-  font-style: italic;
-  line-height: var(--spacing-7);
   max-width: var(--maxWidth-sm);
   padding: var(--spacing-6) var(--spacing-8) var(--spacing-8) var(--spacing-8);
   margin: var(--spacing-10) auto;
@@ -289,12 +263,8 @@ q {
 }
 
 blockquote {
-  font-family: "Literata TT Caption";
   font-size: var(--fontSize-accent);
-  font-weight: 500;
-  font-style: italic;
-  line-height: var(--spacing-7);
-  color: var(--color-black);
+  line-height: 1.7rem;
   text-align: center;
   padding: var(--spacing-16) var(--spacing-6) var(--spacing-20) var(--spacing-6);
   margin: -1.5rem 0;
@@ -302,7 +272,15 @@ blockquote {
 }
 
 blockquote.cn, q.cn {
-  font-style: normal;
+  line-height: 1.85rem;
+}
+
+blockquote.cn {
+  text-align: center;
+}
+
+q.cn {
+  text-align: left;
 }
 
 blockquote > :last-child {
@@ -369,7 +347,7 @@ a {
   border-radius: var(--spacing-8);
   justify-content: center;
   align-items: center;
-  height: 2.5rem;
+  height: 2.25rem;
 }
 
 .start {
@@ -424,7 +402,7 @@ a {
   }
 
 .button-icon {
-  width: var(--spacing-10);
+  width: 2.25rem;
   padding: 0;
 }.button-icon svg {
   min-width: 20px;
@@ -519,7 +497,7 @@ a {
 
 @media (min-width: 768px) {
   :root {
-    --fontSize-root: 22px;
+    --fontSize-root: 24px;
     --fontSize-heading: 2.75rem;
     --lineHeight-heading: 3rem;
   }
@@ -530,13 +508,14 @@ a {
   }
 
   .chapters-list {
-    padding: var(--spacing-3) var(--spacing-8) var(--spacing-4) var(--spacing-8);
+    padding: var(--spacing-3) var(--spacing-7) var(--spacing-4) var(--spacing-7);
   }
 }
 
 @media (min-width: 400px) {
   .chapters-label {
     display: flex;
+    align-items: stretch;
   }
 
   .chapters-icon {
