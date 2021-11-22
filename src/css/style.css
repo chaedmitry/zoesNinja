@@ -215,10 +215,14 @@ p {
   margin: var(--spacing-0) var(--spacing-0) var(--spacing-5) var(--spacing-0);
   padding: var(--spacing-0);
   letter-spacing: 0.1px;
+  font-feature-settings: "liga" 1;
 }
 
 .cn {
+  line-height: 1.5rem;
   text-align: justify;
+  font-feature-settings: "tnum", 'lnum';
+  font-variant-numeric: tabular-nums;
 }
 
 .lang-selector {
@@ -272,7 +276,7 @@ blockquote {
 }
 
 blockquote.cn, q.cn {
-  line-height: 1.85rem;
+  line-height: 2rem;
 }
 
 blockquote.cn {
@@ -472,7 +476,7 @@ a {
 }
 
 .blog-post-nav {
-  margin-top: var(--spacing-5);
+  margin-top: var(--spacing-7);
   display: flex;  
   padding: var(--spacing-4) var(--spacing-6);
   border-radius: var(--spacing-2);
