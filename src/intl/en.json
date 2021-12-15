@@ -10,6 +10,7 @@
     "header-chapters-link": "Chapters",
 
     "footer-title": ". From Zoe with",
+    "footer-credits": "<p class='secondary'><small>Designed by <a class='secondary' href='https://chae.design/' target='_blank' rel='noreferrer'>dmitrychae</a>, illustrated by&nbsp;<a class='secondary' href='https://www.instagram.com/o.tsay_/' target='_blank' rel='noreferrer'>o.tsay</a></small></p>",
 
     "404-title": "It seems you got lost :(",
     "404-message": "This page does not exist. Use the navigation above to find the page you need.",
