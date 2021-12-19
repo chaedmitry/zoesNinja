@@ -8,12 +8,13 @@
     "header-title": "Zoe's Ninja",
     "header-contact": "Contact Zoe",
     "header-chapters-link": "Chapters",
+    "header-contact-link": "https://forms.gle/uyqarZ9uXUKCBxks8",
 
     "footer-title": ". From Zoe with",
     "footer-credits": "<p class='secondary'><small>Designed by <a class='secondary' href='https://chae.design/' target='_blank' rel='noreferrer'>dmitrychae</a>, illustrated by&nbsp;<a class='secondary' href='https://www.instagram.com/o.tsay_/' target='_blank' rel='noreferrer'>o.tsay</a></small></p>",
 
-    "404-title": "It seems you got lost :(",
-    "404-message": "This page does not exist. Use the navigation above to find the page you need.",
+    "404-title": "It seems you've got lost",
+    "404-message": "Don't worry, let the ninja at the top left lead your way. Or find the next article with the Chapters link on the right. Good luck!",
 
     "chapters-title": "Chapters",
     "chapters-message": "No chapters found.",
