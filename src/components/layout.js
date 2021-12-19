@@ -4,9 +4,7 @@ import Header from "./header.js"
 import Footer from "./footer.js"
 
 const Layout = ({ isHomePage, children }) => {
-  const {
-    site: {siteMetadata: { title },},
-  } = useStaticQuery(graphql`
+  useStaticQuery(graphql`
     query LayoutQuery {
       site {
         siteMetadata {

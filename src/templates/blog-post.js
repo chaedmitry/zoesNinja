@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Image from "gatsby-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { injectIntl, Link } from "gatsby-plugin-react-intl"

@@ -6,14 +6,15 @@
     "button-start": "出發！",
     
     "header-title": "難言之隱",
-    "header-contact": "聯繫佐伊",
+    "header-contact": "聯絡 Zoe",
     "header-chapters-link": "章節",
+    "header-contact-link": "https://forms.gle/TRNmHvAQA4vqz6G99",
 
     "footer-title": ". Zoe 札記",
     "footer-credits": "<p class='secondary'><small>設計: <a class='secondary' href='https://chae.design/' target='_blank' rel='noreferrer'>dmitrychae</a>; 插圖: <a class='secondary' href='https://www.instagram.com/o.tsay_/' target='_blank' rel='noreferrer'>o.tsay</a></small></p>",
 
-    "404-title": "看來你迷路了:(",
-    "404-message": "本頁面不存在。 使用上面的導航找到您需要的頁面。",
+    "404-title": "啊，查無此頁",
+    "404-message": "不怕，左上角的忍者可以帶路，或循右上角章節列表找下一章吧！",
 
     "chapters-title": "章節",
     "chapters-message": "沒有找到章節。",

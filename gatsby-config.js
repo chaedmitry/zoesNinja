@@ -85,7 +85,6 @@ module.exports = {
     },
   ],
   siteMetadata: {
-    contact: `https://forms.gle/4jVrUdu7TSTtFoVy5`,
     title: `Zoe's Ninja · 難言之隱`,
     description: `A real-life story of a geneticist navigating her cancer journey. Chance. Life. Love. Science. 一個遺傳學家面對癌病的真人真事。無常、科學。愛、人生。`,
   }
