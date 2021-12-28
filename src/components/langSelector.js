@@ -9,13 +9,13 @@ const LanguageSelector = ({ intl }) => {
     if (intl.locale === "en") {
       return (
         <Link className="button button-normal button-icon lang-selector" to="/zh">
-          <img className="flag" alt="Switch to Chinese" src={zh}/>
+          <small>中</small>
         </Link>
       )}
     else {
       return (
         <Link className="button button-normal button-icon lang-selector" to="/">
-          <img className="flag" alt="Switch to English" src={en}/>
+          <small>EN</small>
         </Link>
       )}
 }
