@@ -225,9 +225,10 @@ p {
   font-variant-numeric: tabular-nums;
 }
 
-.lang-selector {
+.button.lang-selector {
   list-style: none;
   display: flex;
+  padding: var(--spacing-2) var(--spacing-3);
 }
 
 ul,
@@ -473,6 +474,8 @@ a {
 .flag {
   height: 20px;
   width:  20px;
+  margin-right: 6px;
+  display: none;
 }
 
 .blog-post-nav {
@@ -516,7 +519,7 @@ a {
   }
 }
 
-@media (min-width: 400px) {
+@media (min-width: 420px) {
   .chapters-label {
     display: flex;
     align-items: stretch;
@@ -524,5 +527,11 @@ a {
 
   .chapters-icon {
     display: none;
+  }
+}
+
+@media (min-width: 340px) {
+  .flag {
+    display: flex;
   }
 }
