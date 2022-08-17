@@ -30,7 +30,6 @@ const Seo = ({ meta, title }) => {
 
   return (
     <Helmet
-      /*htmlAttributes={{ lang }}*/
       title={title}
       titleTemplate={defaultTitle ? `%s — ${defaultTitle}` : null}
       meta={[
