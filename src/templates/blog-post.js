@@ -25,7 +25,7 @@ const BlogPostTemplate = ({ data, intl }) => {
 
         <p className="share-caption">Share:</p>
 
-        <Link className='button button-normal button-icon share-button share-facebook' 
+        <Link className='button button-normal button-icon share-button' 
         to={`https://www.facebook.com/sharer/sharer.php?u=` + 
         baseUrl + 
         slug}
@@ -38,7 +38,7 @@ const BlogPostTemplate = ({ data, intl }) => {
           </svg>
         </Link>
 
-        <Link className='button button-normal button-icon share-button share-twitter'
+        <Link className='button button-normal button-icon share-button'
         to={`https://twitter.com/intent/tweet?url=` +
         title + 
         ` ` +
@@ -52,7 +52,7 @@ const BlogPostTemplate = ({ data, intl }) => {
           </svg>
         </Link>
         
-        <Link className='button button-normal button-icon share-button share-whatsapp' 
+        <Link className='button button-normal button-icon share-button' 
         to={`whatsapp://send?text=` + 
         title + 
         ` ` +
@@ -66,7 +66,7 @@ const BlogPostTemplate = ({ data, intl }) => {
           </svg>
         </Link>
 
-        <Link className='button button-normal button-icon share-button share-linkedin' 
+        <Link className='button button-normal button-icon share-button' 
         to={`https://www.linkedin.com/shareArticle?url=` + 
         baseUrl + 
         slug}
