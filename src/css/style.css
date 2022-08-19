@@ -81,7 +81,7 @@
   --color-background-lightest: hsla(188, 30%, 98%, 1);
   --color-background-vivid: hsla(188, 60%, 88%, 1);
   --color-black: hsla(188, 20%, 5%, 1);
-  --color-pale: hsla(188, 10%, 64%, 1);
+  --color-pale: hsla(188, 10%, 56%, 1);
   --color-pale-light: hsla(188, 10%, 88%, 1);
   --color-visited: hsla(320, 40%, 32%, 1);
 }
@@ -491,6 +491,19 @@ a {
 
 .blog-post-nav a {
   text-decoration: none;
+}
+
+.share-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-1);
+  align-items: center;
+  padding-top: var(--spacing-3);
+}
+
+.share-caption {
+  margin: 0;
+  padding-right: var(--spacing-2);
 }
 
 /* Media queries */
