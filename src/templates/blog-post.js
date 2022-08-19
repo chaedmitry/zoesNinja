@@ -23,7 +23,7 @@ const BlogPostTemplate = ({ data, intl }) => {
 
       <section className="share-buttons">
 
-        <p className="share-caption">Share:</p>
+        <p className="share-caption">{intl.formatMessage({id: "share" })}: </p>
 
         <Link className='button button-normal button-icon share-button' 
         to={`https://www.facebook.com/sharer/sharer.php?u=` + 
