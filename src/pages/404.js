@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { injectIntl } from "gatsby-plugin-react-intl"
+import { injectIntl } from "../../plugins/gatsby-plugin-react-intl"
 
 const NotFoundPage = ({ data, location, intl }) => {
   const siteTitle = data.site.siteMetadata.title

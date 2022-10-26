@@ -56,6 +56,9 @@ typings/
 # dotenv environment variable files
 .env*
 
+# IDEA files
+.idea/
+
 # gatsby files
 .cache/
 public 

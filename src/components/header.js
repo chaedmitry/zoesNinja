@@ -1,6 +1,6 @@
 import React from "react"
 import logo from "../../static/logo.gif"
-import { injectIntl, Link } from "gatsby-plugin-react-intl"
+import { injectIntl, Link } from "../../plugins/gatsby-plugin-react-intl"
 import LanguageSelector from "./langSelector.js"
 
 const Header = ({ intl }) => {

@@ -1,5 +1,5 @@
 import React from "react"
-import { injectIntl } from "gatsby-plugin-react-intl"
+import { injectIntl } from "../../plugins/gatsby-plugin-react-intl"
 
 const Footer = ({ intl }) => {
   return (

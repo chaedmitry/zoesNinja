@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
-import { injectIntl } from "gatsby-plugin-react-intl"
-import en from "./../../static/en.png"
-import zh from "./../../static/zh.png"
+import { injectIntl } from "../../plugins/gatsby-plugin-react-intl"
+import en from "../../static/en.png"
+import zh from "../../static/zh.png"
 
 const LanguageSelector = ({ intl }) => {
     

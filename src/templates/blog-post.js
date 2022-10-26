@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { injectIntl, Link } from "gatsby-plugin-react-intl"
+import { injectIntl, Link } from "../../plugins/gatsby-plugin-react-intl"
 
 const BlogPostTemplate = ({ data, intl }) => {
   const { html } = data.markdownRemark
