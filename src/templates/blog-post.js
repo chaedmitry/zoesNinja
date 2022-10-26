@@ -4,12 +4,12 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { injectIntl, Link } from "../../plugins/gatsby-plugin-react-intl"
 
-const BlogPostTemplate = ({ data, intl }) => {
+const BlogPostTemplate = ({ data, location, intl }) => {
   const { html } = data.markdownRemark
   const { title, category, excerpt, nextSlug, nextTitle, slug } = data.markdownRemark.frontmatter
   const baseUrl = 'https://zoes.ninja'
   return (
-    <Layout>
+    <Layout path={location.pathname}>
       <Seo title={title} description={excerpt} />
 
       <article className="blog-post" itemScope itemType="http://schema.org/Article">

@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { injectIntl, Link } from "../../plugins/gatsby-plugin-react-intl"
 
-const BlogIndex = ( {data, intl} ) => {
+const BlogIndex = ( {data, location, intl} ) => {
   const posts = data.allMarkdownRemark.nodes
   const filteredPosts = posts.filter((post) =>
     post.frontmatter.lang.includes(intl.locale)
@@ -12,7 +12,7 @@ const BlogIndex = ( {data, intl} ) => {
 
   if (!posts.length) {
     return (
-      <Layout>
+      <Layout path={location.pathname}>
         <Seo title={intl.formatMessage({id: "seo-chapters-title" })} />
         <p>
         {intl.formatMessage({id: "chapters-message" })}
@@ -22,7 +22,7 @@ const BlogIndex = ( {data, intl} ) => {
   }
 
   return (
-    <Layout isHomePage>
+    <Layout isHomePage path={location.pathname}>
       <Seo title={intl.formatMessage({id: "seo-chapters-title" })} />
       <h1>{intl.formatMessage({id: "chapters-title" })}</h1>
       <ol className="chapters-list">

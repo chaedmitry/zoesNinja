@@ -20,12 +20,12 @@ module.exports = {
         languages: [`en`, `zh`],
         defaultLanguage: `en`,
         // option to redirect to `/en` when connecting `/`
-        redirect: false,
-        // option for use / as defaultLangauge root path. if your defaultLanguage is `ko`, when `redirectDefaultLanguageToRoot` is true, then it will not generate `/ko/xxx` pages, instead of `/xxx`
+        redirect: true,
+        // option for use / as defaultLanguage root path. if your defaultLanguage is `ko`, when `redirectDefaultLanguageToRoot` is true, then it will not generate `/ko/xxx` pages, instead of `/xxx`
         redirectDefaultLanguageToRoot: false,
-        // paths that you don't want to genereate locale pages, example: ["/dashboard/","/test/**"], string format is from micromatch https://github.com/micromatch/micromatch
-        ignoredPaths: [],
-        // option to fallback to the defined language instead of the `defaultLanguage` if the user langauge is not in the list
+        // paths that you don't want to generate locale pages, example: ["/dashboard/","/test/**"], string format is from micromatch https://github.com/micromatch/micromatch
+        ignoredPaths: [`/en/**`, `/zh/**`],
+        // option to fall back to the defined language instead of the `defaultLanguage` if the user language is not in the list
         fallbackLanguage: `en`,
       },
     },

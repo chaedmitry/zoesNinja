@@ -8,7 +8,7 @@ const NotFoundPage = ({ data, location, intl }) => {
   const siteTitle = data.site.siteMetadata.title
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout path={location.pathname} title={siteTitle}>
       <Seo title="404: Not Found" />
       <h1>{intl.formatMessage({id: "404-title" })}</h1>
       <p>{intl.formatMessage({id: "404-message" })}</p>

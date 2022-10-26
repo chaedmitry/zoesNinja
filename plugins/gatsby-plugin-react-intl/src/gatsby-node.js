@@ -49,7 +49,7 @@ exports.onCreatePage = async ({ page, actions }, pluginOptions) => {
   if (typeof page.context.intl === "object") {
     return
   }
-  reporter.info(`page` + page.path + ` has been created`)
+
   const { createPage, deletePage } = actions
   const {
     path = ".",
@@ -96,7 +96,7 @@ exports.onCreatePage = async ({ page, actions }, pluginOptions) => {
         : `${page.ownerNodeId}${language}`
       : undefined
 
-    const newPage = {
+    return {
       ...page,
       ownerNodeId,
       path: newPath,
@@ -119,7 +119,6 @@ exports.onCreatePage = async ({ page, actions }, pluginOptions) => {
         },
       },
     }
-    return newPage
   }
 
   deletePage(page)
@@ -130,7 +129,9 @@ exports.onCreatePage = async ({ page, actions }, pluginOptions) => {
     page.path.match(/404/) ||
     !removeOriginalPages
   ) {
-    const newPage = generatePage(false, defaultLanguage)
+    const language = page.context.language || defaultLanguage
+    reporter.info(`page` + page.path + ` assumes [` + language +`] language`)
+    const newPage = generatePage(false, language)
     createPage(newPage)
   }
 

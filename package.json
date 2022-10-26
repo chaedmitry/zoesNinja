@@ -55,7 +55,7 @@
   },
   "scripts": {
     "build-intl-plugin": "cd ./plugins/gatsby-plugin-react-intl && npm install && npm run build",
-    "build": "npm run builda -intl-plugin && gatsby build",
+    "build": "npm run build-intl-plugin && gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",

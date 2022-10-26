@@ -4,9 +4,9 @@ import Seo from "../components/seo"
 import LadyPic from "../components/ladyPic"
 import { injectIntl, Link } from "../../plugins/gatsby-plugin-react-intl"
 
-const Home = ({ intl }) => {
+const Home = ({ intl, location }) => {
   return (
-      <Layout isHomePage>
+      <Layout isHomePage path={location.pathname}>
         <Seo title={intl.formatMessage({id: "seo-home-title" })} />
         <h1>{intl.formatMessage({id: "homepage-title" })}</h1>
         <div dangerouslySetInnerHTML={{__html: intl.formatMessage({id: "homepage-p1" })}}></div>
