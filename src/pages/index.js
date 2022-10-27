@@ -13,7 +13,7 @@ const Home = ({ intl, location }) => {
         <LadyPic />
         <div dangerouslySetInnerHTML={{__html: intl.formatMessage({id: "homepage-p2" })}}></div>
         <div dangerouslySetInnerHTML={{__html: intl.formatMessage({id: "homepage-p3" })}}></div>
-        <Link className="button button-accent start" to={`/chapters/01-the-first-encounter-${intl.locale}`}>{intl.formatMessage({id: "button-start" })}</Link>
+        <Link className="button button-accent start" to={`/${intl.locale}/chapters/01-the-first-encounter`}>{intl.formatMessage({id: "button-start" })}</Link>
       </Layout>
   )
 }
