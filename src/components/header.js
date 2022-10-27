@@ -1,18 +1,19 @@
 import React from "react"
 import logo from "../../static/logo.gif"
-import { injectIntl, Link } from "gatsby-plugin-react-intl"
+import { injectIntl, Link } from "../../plugins/gatsby-plugin-react-intl"
 import LanguageSelector from "./langSelector.js"
 
-const Header = ({ intl }) => {
+const Header = ({ intl, path }) => {
+  const home = (intl.locale === "en") ? `/en/` : `/zh/`
   return (
     <header className="header">
-      <Link className="blog-name" to="/">
+      <Link className="blog-name" to={home}>
         <img className="blog-logo" alt="Go to the homepage" src={logo}/>
         <span className="blog-title">{intl.formatMessage({id: "header-title" })}</span>
       </Link>
 
       <section className="nav">
-        <LanguageSelector />
+        <LanguageSelector path={path} />
 
         <a className="button button-normal button-icon" href={intl.formatMessage({id: "header-contact-link" })} target="_blank" rel="noreferrer">
           <svg aria-labelledby="contact" width="23" height="27" viewBox="0 0 23 27" fill="none" xmlns="http://www.w3.org/2000/svg">

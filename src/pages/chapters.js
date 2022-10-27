@@ -2,9 +2,9 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { injectIntl, Link } from "gatsby-plugin-react-intl"
+import { injectIntl, Link } from "../../plugins/gatsby-plugin-react-intl"
 
-const BlogIndex = ( {data, intl} ) => {
+const BlogIndex = ( {data, location, intl} ) => {
   const posts = data.allMarkdownRemark.nodes
   const filteredPosts = posts.filter((post) =>
     post.frontmatter.lang.includes(intl.locale)
@@ -12,8 +12,8 @@ const BlogIndex = ( {data, intl} ) => {
 
   if (!posts.length) {
     return (
-      <Layout>
-        <Seo title={intl.formatMessage({id: "seo-chapters-title" })} />
+      <Layout path={location.pathname} lang={intl.locale}>
+        <Seo title={intl.formatMessage({id: "seo-chapters-title" })} lang={intl.locale === `zh` ? `zh-HK` : intl.locale} />
         <p>
         {intl.formatMessage({id: "chapters-message" })}
         </p>
@@ -22,8 +22,8 @@ const BlogIndex = ( {data, intl} ) => {
   }
 
   return (
-    <Layout isHomePage>
-      <Seo title={intl.formatMessage({id: "seo-chapters-title" })} />
+    <Layout isHomePage path={location.pathname} lang={intl.locale}>
+      <Seo title={intl.formatMessage({id: "seo-chapters-title" })} lang={intl.locale === `zh` ? `zh-HK` : intl.locale} />
       <h1>{intl.formatMessage({id: "chapters-title" })}</h1>
       <ol className="chapters-list">
         {filteredPosts.map(post => {

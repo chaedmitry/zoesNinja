@@ -2,15 +2,15 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { injectIntl, Link } from "gatsby-plugin-react-intl"
+import { injectIntl, Link } from "../../plugins/gatsby-plugin-react-intl"
 
-const BlogPostTemplate = ({ data, intl }) => {
+const BlogPostTemplate = ({ data, location, intl }) => {
   const { html } = data.markdownRemark
-  const { title, category, excerpt, nextSlug, nextTitle, slug } = data.markdownRemark.frontmatter
-  const baseUrl = 'https://zoes.ninja'
+  const { title, category, excerpt, nextSlug, nextTitle, slug, lang } = data.markdownRemark.frontmatter
+  const { siteUrl } = data.site.siteMetadata
   return (
-    <Layout>
-      <Seo title={title} description={excerpt} />
+    <Layout path={location.pathname} lang={lang}>
+      <Seo title={title} description={excerpt} lang={lang === `zh` ? `zh-HK` : lang} />
 
       <article className="blog-post" itemScope itemType="http://schema.org/Article">
         <p className="secondary category">{category}</p>
@@ -25,12 +25,7 @@ const BlogPostTemplate = ({ data, intl }) => {
 
         <p className="share-caption">{intl.formatMessage({id: "share" })}: </p>
 
-        <Link className='button button-normal button-icon share-button' 
-        to={`https://www.facebook.com/sharer/sharer.php?u=` + 
-        baseUrl + 
-        slug}
-        target='_blank' 
-        rel='noopener noreferrer'>
+        <Link className='button button-normal button-icon share-button' to={`https://www.facebook.com/sharer/sharer.php?u=` + siteUrl + slug} target='_blank' rel='noopener noreferrer'>
           <svg width="23" height="27" viewBox="0 0 23 27" fill="none" xmlns="http://www.w3.org/2000/svg">
             <title id="contact">Share on Facebook</title>
             <path className="icon-color-dark" d="M16 10.1237H12.5944V7.84036C12.5944 6.98286 13.1503 6.78294 13.5419 6.78294C13.9326 6.78294 15.9452 6.78294 15.9452 6.78294V3.01321L12.6353 3C8.96106 3 8.12491 5.81159 8.12491 7.61085V10.1237H6V14.0082H8.12491C8.12491 18.9934 8.12491 25 8.12491 25H12.5944C12.5944 25 12.5944 18.9342 12.5944 14.0082H15.6102L16 10.1237Z" fill="#fff"/>
@@ -38,40 +33,21 @@ const BlogPostTemplate = ({ data, intl }) => {
           </svg>
         </Link>
 
-        <Link className='button button-normal button-icon share-button'
-        to={`https://twitter.com/intent/tweet?url=` +
-        title + 
-        ` ` +
-        baseUrl +
-        slug}
-        target='_blank'
-        rel='noopener noreferrer'>
+        <Link className='button button-normal button-icon share-button' to={`https://twitter.com/intent/tweet?url=` + title + ` ` + siteUrl + slug} target='_blank' rel='noopener noreferrer'>
           <svg width="23" height="27" viewBox="0 0 23 27" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path className="icon-color-light" d="M22 8.01236C21.2648 8.3542 20.4735 8.58478 19.6433 8.68797C20.491 8.15717 21.1409 7.31638 21.4475 6.31338C20.6546 6.80554 19.7768 7.16266 18.8418 7.35545C18.0936 6.52146 17.0271 6 15.8469 6C13.5811 6 11.744 7.92149 11.744 10.2918C11.744 10.6277 11.7802 10.9551 11.8504 11.2698C8.44013 11.0906 5.41636 9.38225 3.39253 6.78558C3.03932 7.41914 2.83714 8.15632 2.83714 8.9436C2.83714 10.4324 3.56142 11.7462 4.66244 12.5157C3.99013 12.4932 3.35721 12.2999 2.80385 11.9785C2.80344 11.9963 2.80344 12.0146 2.80344 12.0328C2.80344 14.1119 4.21789 15.8461 6.09516 16.241C5.75089 16.3387 5.38834 16.3913 5.01403 16.3913C4.74933 16.3913 4.49234 16.3646 4.24184 16.3141C4.76435 18.019 6.27948 19.2602 8.07474 19.2946C6.67044 20.4458 4.90157 21.132 2.97883 21.132C2.64795 21.132 2.32113 21.1116 2 21.0717C3.81637 22.29 5.97296 23 8.28991 23C15.8376 23 19.9644 16.4606 19.9644 10.7891C19.9644 10.6031 19.9607 10.4175 19.953 10.2332C20.7544 9.62939 21.4503 8.87311 22 8.01236Z" fill="#fff"/>
             <path className="icon-color-dark" d="M22 8.01236C21.2648 8.3542 20.4735 8.58478 19.6433 8.68797C20.491 8.15717 21.1409 7.31638 21.4475 6.31338C20.6546 6.80554 19.7768 7.16266 18.8418 7.35545C18.0936 6.52146 17.0271 6 15.8469 6C13.5811 6 11.744 7.92149 11.744 10.2918C11.744 10.6277 11.7802 10.9551 11.8504 11.2698C8.44013 11.0906 5.41636 9.38225 3.39253 6.78558C3.03932 7.41914 2.83714 8.15632 2.83714 8.9436C2.83714 10.4324 3.56142 11.7462 4.66244 12.5157C3.99013 12.4932 3.35721 12.2999 2.80385 11.9785C2.80344 11.9963 2.80344 12.0146 2.80344 12.0328C2.80344 14.1119 4.21789 15.8461 6.09516 16.241C5.75089 16.3387 5.38834 16.3913 5.01403 16.3913C4.74933 16.3913 4.49234 16.3646 4.24184 16.3141C4.76435 18.019 6.27948 19.2602 8.07474 19.2946C6.67044 20.4458 4.90157 21.132 2.97883 21.132C2.64795 21.132 2.32113 21.1116 2 21.0717C3.81637 22.29 5.97296 23 8.28991 23C15.8376 23 19.9644 16.4606 19.9644 10.7891C19.9644 10.6031 19.9607 10.4175 19.953 10.2332C20.7544 9.62939 21.4503 8.87311 22 8.01236Z" fill="#489BA8"/>
           </svg>
         </Link>
         
-        <Link className='button button-normal button-icon share-button' 
-        to={`whatsapp://send?text=` + 
-        title + 
-        ` ` +
-        baseUrl + 
-        slug}
-        target='_blank' 
-        rel='noopener noreferrer'>
+        <Link className='button button-normal button-icon share-button' to={`whatsapp://send?text=` + title + ` ` + siteUrl + slug} target='_blank' rel='noopener noreferrer'>
           <svg width="23" height="27" viewBox="0 0 23 27" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path className="icon-color-light" d="M11.5 4C6.26183 4 2.00006 8.26178 2.00006 13.5C2.00006 15.1357 2.4226 16.744 3.22391 18.1633L2.01534 22.4754C1.97569 22.6171 2.0141 22.7691 2.11654 22.8744C2.19543 22.9558 2.30282 23 2.4131 23C2.44615 23 2.4796 22.9959 2.51223 22.988L7.01274 21.8732C8.38693 22.6109 9.9346 23 11.5 23C16.7382 23 21 18.7382 21 13.5C21 8.26178 16.7382 4 11.5 4ZM16.2789 16.8523C16.0757 17.4148 15.1009 17.9282 14.6325 17.9972C14.2121 18.0588 13.6801 18.0852 13.096 17.9018C12.742 17.7903 12.2877 17.6424 11.7057 17.3942C9.25928 16.3508 7.66163 13.9184 7.53937 13.7577C7.41752 13.5971 6.54352 12.4521 6.54352 11.2671C6.54352 10.0821 7.17341 9.49926 7.39728 9.25804C7.62115 9.01683 7.88509 8.95652 8.04782 8.95652C8.21056 8.95652 8.37289 8.95859 8.51539 8.9652C8.66532 8.97263 8.86647 8.90861 9.06432 9.37865C9.26754 9.86109 9.75534 11.0461 9.81564 11.1671C9.87678 11.2877 9.91725 11.4286 9.8363 11.5893C9.75534 11.7499 9.71486 11.8503 9.5926 11.9912C9.47034 12.132 9.33652 12.3051 9.22665 12.4133C9.10439 12.5335 8.97758 12.6636 9.11967 12.9048C9.26175 13.146 9.75121 13.9345 10.4765 14.5731C11.4079 15.3934 12.1939 15.6478 12.4376 15.7684C12.6813 15.889 12.8238 15.8688 12.9659 15.7081C13.108 15.547 13.5756 15.0047 13.7379 14.7639C13.9002 14.5231 14.063 14.5628 14.2868 14.6433C14.5107 14.7234 15.7098 15.3058 15.9535 15.4264C16.1971 15.547 16.3599 15.6073 16.421 15.7077C16.4821 15.8077 16.4821 16.2901 16.2789 16.8523Z" fill="#fff"/>
             <path className="icon-color-dark" d="M11.5 4C6.26183 4 2.00006 8.26178 2.00006 13.5C2.00006 15.1357 2.4226 16.744 3.22391 18.1633L2.01534 22.4754C1.97569 22.6171 2.0141 22.7691 2.11654 22.8744C2.19543 22.9558 2.30282 23 2.4131 23C2.44615 23 2.4796 22.9959 2.51223 22.988L7.01274 21.8732C8.38693 22.6109 9.9346 23 11.5 23C16.7382 23 21 18.7382 21 13.5C21 8.26178 16.7382 4 11.5 4ZM16.2789 16.8523C16.0757 17.4148 15.1009 17.9282 14.6325 17.9972C14.2121 18.0588 13.6801 18.0852 13.096 17.9018C12.742 17.7903 12.2877 17.6424 11.7057 17.3942C9.25928 16.3508 7.66163 13.9184 7.53937 13.7577C7.41752 13.5971 6.54352 12.4521 6.54352 11.2671C6.54352 10.0821 7.17341 9.49926 7.39728 9.25804C7.62115 9.01683 7.88509 8.95652 8.04782 8.95652C8.21056 8.95652 8.37289 8.95859 8.51539 8.9652C8.66532 8.97263 8.86647 8.90861 9.06432 9.37865C9.26754 9.86109 9.75534 11.0461 9.81564 11.1671C9.87678 11.2877 9.91725 11.4286 9.8363 11.5893C9.75534 11.7499 9.71486 11.8503 9.5926 11.9912C9.47034 12.132 9.33652 12.3051 9.22665 12.4133C9.10439 12.5335 8.97758 12.6636 9.11967 12.9048C9.26175 13.146 9.75121 13.9345 10.4765 14.5731C11.4079 15.3934 12.1939 15.6478 12.4376 15.7684C12.6813 15.889 12.8238 15.8688 12.9659 15.7081C13.108 15.547 13.5756 15.0047 13.7379 14.7639C13.9002 14.5231 14.063 14.5628 14.2868 14.6433C14.5107 14.7234 15.7098 15.3058 15.9535 15.4264C16.1971 15.547 16.3599 15.6073 16.421 15.7077C16.4821 15.8077 16.4821 16.2901 16.2789 16.8523Z" fill="#489BA8"/>
           </svg>
         </Link>
 
-        <Link className='button button-normal button-icon share-button' 
-        to={`https://www.linkedin.com/shareArticle?url=` + 
-        baseUrl + 
-        slug}
-        target='_blank' 
-        rel='noopener noreferrer'>
+        <Link className='button button-normal button-icon share-button' to={`https://www.linkedin.com/shareArticle?url=` + siteUrl + slug} target='_blank' rel='noopener noreferrer'>
           <svg width="23" height="27" viewBox="0 0 23 27" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path className="icon-color-light" d="M7.13043 21H3V9.40909H7.13043V21ZM5.06604 7.86364C3.92357 7.86364 3 6.99741 3 5.93105C3 4.86468 3.92522 4 5.06604 4C6.20439 4 7.13043 4.86623 7.13043 5.93105C7.13043 6.99741 6.20439 7.86364 5.06604 7.86364ZM22 21H18.029V15.3591C18.029 14.0138 18.0017 12.2836 15.9646 12.2836C13.8969 12.2836 13.5789 13.7487 13.5789 15.2617V21H9.6087V9.40059H13.4203V10.9855H13.474C14.0043 10.0736 15.3004 9.11236 17.2335 9.11236C21.2565 9.11236 22 11.5148 22 14.6381C22 14.6381 22 21 22 21Z" fill="#fff"/>
             <path className="icon-color-dark" d="M7.13043 21H3V9.40909H7.13043V21ZM5.06604 7.86364C3.92357 7.86364 3 6.99741 3 5.93105C3 4.86468 3.92522 4 5.06604 4C6.20439 4 7.13043 4.86623 7.13043 5.93105C7.13043 6.99741 6.20439 7.86364 5.06604 7.86364ZM22 21H18.029V15.3591C18.029 14.0138 18.0017 12.2836 15.9646 12.2836C13.8969 12.2836 13.5789 13.7487 13.5789 15.2617V21H9.6087V9.40059H13.4203V10.9855H13.474C14.0043 10.0736 15.3004 9.11236 17.2335 9.11236C21.2565 9.11236 22 11.5148 22 14.6381C22 14.6381 22 21 22 21Z" fill="#489BA8"/>
@@ -97,11 +73,17 @@ export const query = graphql`
       html
       frontmatter {
         category
+        lang
         title
         excerpt
         nextSlug
         nextTitle
         slug
+      }
+    }
+    site {
+      siteMetadata {
+        siteUrl
       }
     }
   }`

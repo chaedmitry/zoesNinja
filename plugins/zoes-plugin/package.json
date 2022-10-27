@@ -1,0 +1,10 @@
+{
+  "name": "zoes-plugin",
+  "version": "1.0.0",
+  "description": "Custom Zoe's Plugin",
+  "main": "index.js",
+  "scripts": {
+  },
+  "author": "",
+  "license": "MIT"
+}
