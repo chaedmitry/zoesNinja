@@ -11,7 +11,7 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import ogImage from "../../static/og_image.jpg"
 
-const Seo = ({ meta, title }) => {
+const Seo = ({ meta, title, description, lang }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -25,13 +25,16 @@ const Seo = ({ meta, title }) => {
     `
   )
 
-  const metaDescription = site.siteMetadata.description
-  const defaultTitle = site.siteMetadata.title
+  const siteTitle = site.siteMetadata.title
+  const pageTitle = title ? `${title} — ${siteTitle}` : siteTitle
+  const siteDescription = site.siteMetadata.description
+  const pageDescription = description ? description : siteDescription
 
   return (
-    <Helmet
+    <Helmet htmlAttributes={{ lang: lang }}
+      lang={lang}
       title={title}
-      titleTemplate={defaultTitle ? `%s — ${defaultTitle}` : null}
+      titleTemplate={siteTitle ? `%s — ${siteTitle}` : null}
       meta={[
         {
           name: `robots`,
@@ -39,15 +42,15 @@ const Seo = ({ meta, title }) => {
         },
         {
           name: `description`,
-          content: metaDescription,
+          content: pageDescription,
         },
         {
           property: `og:title`,
-          content: defaultTitle,
+          content: pageTitle,
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: pageDescription,
         },
         {
           property: `og:type`,
@@ -63,11 +66,11 @@ const Seo = ({ meta, title }) => {
         },
         {
           name: `twitter:title`,
-          content: defaultTitle,
+          content: pageTitle,
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
+          content: pageDescription,
         },
       ].concat(meta)}
     />
@@ -75,16 +78,17 @@ const Seo = ({ meta, title }) => {
 }
 
 Seo.defaultProps = {
-  /*lang: `en`,*/
   meta: [],
+  title: ``,
   description: ``,
+  lang: ``,
 }
 
 Seo.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  lang: PropTypes.string,
 }
 
 export default Seo

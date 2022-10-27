@@ -1,15 +1,13 @@
 import React from "react"
-import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { injectIntl } from "../../plugins/gatsby-plugin-react-intl"
 
 const NotFoundPage = ({ data, location, intl }) => {
-  const siteTitle = data.site.siteMetadata.title
 
   return (
-    <Layout path={location.pathname} title={siteTitle}>
-      <Seo title="404: Not Found" />
+    <Layout path={location.pathname} lang={intl.locale}>
+      <Seo title="404: Not Found"  lang={intl.locale === `zh` ? `zh-HK` : intl.locale} />
       <h1>{intl.formatMessage({id: "404-title" })}</h1>
       <p>{intl.formatMessage({id: "404-message" })}</p>
     </Layout>
@@ -17,13 +15,3 @@ const NotFoundPage = ({ data, location, intl }) => {
 }
 
 export default injectIntl(NotFoundPage)
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`

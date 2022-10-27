@@ -12,8 +12,8 @@ const BlogIndex = ( {data, location, intl} ) => {
 
   if (!posts.length) {
     return (
-      <Layout path={location.pathname}>
-        <Seo title={intl.formatMessage({id: "seo-chapters-title" })} />
+      <Layout path={location.pathname} lang={intl.locale}>
+        <Seo title={intl.formatMessage({id: "seo-chapters-title" })} lang={intl.locale === `zh` ? `zh-HK` : intl.locale} />
         <p>
         {intl.formatMessage({id: "chapters-message" })}
         </p>
@@ -22,8 +22,8 @@ const BlogIndex = ( {data, location, intl} ) => {
   }
 
   return (
-    <Layout isHomePage path={location.pathname}>
-      <Seo title={intl.formatMessage({id: "seo-chapters-title" })} />
+    <Layout isHomePage path={location.pathname} lang={intl.locale}>
+      <Seo title={intl.formatMessage({id: "seo-chapters-title" })} lang={intl.locale === `zh` ? `zh-HK` : intl.locale} />
       <h1>{intl.formatMessage({id: "chapters-title" })}</h1>
       <ol className="chapters-list">
         {filteredPosts.map(post => {
