@@ -5,6 +5,7 @@ import LanguageSelector from "./langSelector.js"
 
 const Header = ({ intl, path }) => {
   const home = (intl.locale === "en") ? `/en/` : `/zh/`
+  const chapters = home + `chapters`
   return (
     <header className="header">
       <Link className="blog-name" to={home}>
@@ -23,7 +24,7 @@ const Header = ({ intl, path }) => {
           </svg>
         </a>
 
-        <Link className="button button-normal button-icon chapters-icon" to="/chapters">
+        <Link className="button button-normal button-icon chapters-icon" to={chapters}>
           <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path className="icon-color-dark" d="M0 1C0 0.447715 0.447715 0 1 0H15C15.5523 0 16 0.447715 16 1V1C16 1.55228 15.5523 2 15 2H1C0.447715 2 0 1.55228 0 1V1Z" fill="#489BA8"/>
             <rect className="icon-color-dark" y="5" width="16" height="2" rx="1" fill="#489BA8"/>
@@ -31,7 +32,7 @@ const Header = ({ intl, path }) => {
           </svg>
         </Link>
 
-        <Link className="button button-normal chapters-label" to="/chapters">
+        <Link className="button button-normal chapters-label" to={chapters}>
           {intl.formatMessage({id: "header-chapters-link" })}
         </Link>
       </section>
